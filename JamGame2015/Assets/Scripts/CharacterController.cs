@@ -122,7 +122,8 @@ public class CharacterController : MonoBehaviour {
         else
         {
             //decrease velocity.y
-            velocity.y -= physSetting.downAccel;
+            if (velocity.y > -10)
+                velocity.y -= physSetting.downAccel;
         }
     }
 }

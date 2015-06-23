@@ -10,15 +10,17 @@ public class ObstructionHandler : MonoBehaviour
         public enum State { FadingIn, FadingOut };
         public State state;
         public GameObject obj;
-        public Material material;
-        public Color color;
+        public Material[] materials;
+        public Color[] colors;
 
         public Obstruction(GameObject obj)
         {
             state = State.FadingOut;
             this.obj = obj;
-            material = obj.GetComponent<Renderer>().material;
-            color = material.color;
+            materials = obj.GetComponent<Renderer>().materials;
+            colors = new Color[materials.Length];
+            for (int i = 0; i < materials.Length; i++)
+                colors[i] = materials[i].color;
         }
     }
 
@@ -85,7 +87,8 @@ public class ObstructionHandler : MonoBehaviour
         foreach (RaycastHit hit in obstructionHits)
         {
             Obstruction o = new Obstruction(hit.collider.gameObject);
-            SetMaterialBlendMode(o.material, "Fade");
+            for(int i = 0; i < o.materials.Length; i++)
+                SetMaterialBlendMode(o.materials[i], "Fade");
             if (!ObstructionExists(o))
                 obstructions.Add(o);
         }
@@ -128,25 +131,29 @@ public class ObstructionHandler : MonoBehaviour
     {
         for (int i = obstructions.Count - 1; i >= 0; i--)
         {
-            if (obstructions[i].state == Obstruction.State.FadingOut)
+            for (int j = 0; j < obstructions[i].materials.Length; j++) //each one of the obstructions materials
             {
-                if (obstructions[i].color.a > obstructionSetting.minObstructionAlpha)
+                if (obstructions[i].state == Obstruction.State.FadingOut)
                 {
-                    obstructions[i].color.a -= obstructionSetting.obstructionFadeSmooth * Time.deltaTime;
-                    obstructions[i].material.color = obstructions[i].color;
+                    if (obstructions[i].colors[j].a > obstructionSetting.minObstructionAlpha)
+                    {
+                        obstructions[i].colors[j].a -= obstructionSetting.obstructionFadeSmooth * Time.deltaTime;
+                        obstructions[i].materials[j].color = obstructions[i].colors[j];
+                    }
                 }
-            }
-            if (obstructions[i].state == Obstruction.State.FadingIn)
-            {
-                if (obstructions[i].color.a < 1.0f)
+                if (obstructions[i].state == Obstruction.State.FadingIn)
                 {
-                    obstructions[i].color.a += obstructionSetting.obstructionFadeSmooth * Time.deltaTime;
-                    obstructions[i].material.color = obstructions[i].color;
-                }
-                else
-                {
-                    SetMaterialBlendMode(obstructions[i].material, "Opaque");
-                    obstructions.RemoveAt(i);
+                    if (obstructions[i].colors[j].a < 1.0f)
+                    {
+                        obstructions[i].colors[j].a += obstructionSetting.obstructionFadeSmooth * Time.deltaTime;
+                        obstructions[i].materials[j].color = obstructions[i].colors[j];
+                    }
+                    else
+                    {
+                        SetMaterialBlendMode(obstructions[i].materials[j], "Opaque");
+                        if (j > obstructions[i].materials.Length - 2)
+                            obstructions.RemoveAt(i);
+                    }
                 }
             }
         }
