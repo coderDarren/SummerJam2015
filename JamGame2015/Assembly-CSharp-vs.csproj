@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BloomControl.cs" />
      <Compile Include="Assets\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Scripts\CollisionHandler.cs" />
+     <Compile Include="Assets\Scripts\Magnet.cs" />
      <Compile Include="Assets\Scripts\ObstructionHandler.cs" />
      <Compile Include="Assets\Scripts\RTSCamera.cs" />
      <Compile Include="Assets\Scripts\Rotater.cs" />
