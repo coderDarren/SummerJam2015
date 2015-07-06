@@ -20,8 +20,7 @@ public class BlockTransformOptions : MonoBehaviour
     {
         if (menu)
             Destroy(menu);
-        menu = Instantiate(OptionsMenu, new Vector3(Screen.width - 100, 100, 0), Quaternion.identity) as GameObject;
+        menu = Instantiate(OptionsMenu, new Vector3(Input.mousePosition.x + 100, Input.mousePosition.y - 100, 0), Quaternion.identity) as GameObject;
         menu.transform.parent = transform;
-        menu.GetComponent<BlockTransformActions>().transformBlock = blockObject;
     }
 }
