@@ -10,6 +10,7 @@ public class BlockTransformer : MonoBehaviour {
     public Status status;
 
     bool colliding = false;
+    int collisionCount = 0; //there will be instances where you come in collision with two or more items. If you exit one collision but are still colliding with something else, you still want to be seen as colliding
 
     public bool Colliding
     {
@@ -62,6 +63,7 @@ public class BlockTransformer : MonoBehaviour {
         if (coll.transform.tag == "TransformBlock")
         {
             Debug.Log("Collision detected.");
+            collisionCount++;
             colliding = true;
         }
     }
@@ -71,7 +73,11 @@ public class BlockTransformer : MonoBehaviour {
         if (coll.transform.tag == "TransformBlock")
         {
             Debug.Log("Collision exited.");
-            colliding = false;
+            if (collisionCount > 0)
+                collisionCount--;
+
+            if (collisionCount == 0)
+                colliding = false;
         }
     }
 

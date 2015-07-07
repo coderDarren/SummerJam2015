@@ -11,6 +11,7 @@ public class CharacterController : MonoBehaviour {
         public float mouseRotateVel = 0.1f;
         public float jumpVel = 5;
         public float distToGrounded = 0.1f;
+        public float groundCheckRadius = 0.25f;
         public LayerMask ground;
     }
 
@@ -39,6 +40,7 @@ public class CharacterController : MonoBehaviour {
     float forwardInput, turnInput, jumpInput;
     Vector3 previousMousePos = Vector3.zero;
     Vector3 currentMousePos = Vector3.zero;
+    Ray groundCheckRay;
 
     public Quaternion TargetRotation
     {
@@ -47,7 +49,8 @@ public class CharacterController : MonoBehaviour {
 
     bool Grounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, moveSetting.distToGrounded, moveSetting.ground);
+        groundCheckRay = new Ray(transform.position, Vector3.down);
+        return Physics.SphereCast(groundCheckRay, moveSetting.groundCheckRadius, moveSetting.distToGrounded, moveSetting.ground);
     }
 
     void Start()
