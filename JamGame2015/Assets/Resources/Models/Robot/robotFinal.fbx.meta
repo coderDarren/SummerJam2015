@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 5c997a02624c946deb89d5e61198d87c
+timeCreated: 1436425583
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: baseSpine
+    100004: head
+    100006: head_end
+    100008: LArmMid
+    100010: LArmMid.001
+    100012: LArmTop
+    100014: LArmTop.001
+    100016: Lfinger1
+    100018: Lfinger1.001
+    100020: Lfinger1.001_end
+    100022: Lfinger1.002
+    100024: Lfinger1.003
+    100026: Lfinger1.003_end
+    100028: LFinger2
+    100030: LFinger2.001
+    100032: LFinger2.001_end
+    100034: LFinger2.002
+    100036: LFinger2.003
+    100038: LFinger2.003_end
+    100040: LFinger3
+    100042: LFinger3.001
+    100044: LFinger3.001_end
+    100046: LFinger3.002
+    100048: LFinger3.003
+    100050: LFinger3.003_end
+    100052: LFoot
+    100054: LFoot.001
+    100056: LFoot.001_end
+    100058: LFoot_end
+    100060: LHand
+    100062: LHand.001
+    100064: LLegBottom
+    100066: LLegBottom.001
+    100068: LLegMid
+    100070: LLegMid.001
+    100072: LLegTop
+    100074: LLegTop.001
+    100076: LShoulder
+    100078: LShoulder.001
+    100080: neck
+    100082: robotEnemy
+    100084: //RootNode
+    100086: spineMid
+    100088: spineTop
+    400000: Armature
+    400002: baseSpine
+    400004: head
+    400006: head_end
+    400008: LArmMid
+    400010: LArmMid.001
+    400012: LArmTop
+    400014: LArmTop.001
+    400016: Lfinger1
+    400018: Lfinger1.001
+    400020: Lfinger1.001_end
+    400022: Lfinger1.002
+    400024: Lfinger1.003
+    400026: Lfinger1.003_end
+    400028: LFinger2
+    400030: LFinger2.001
+    400032: LFinger2.001_end
+    400034: LFinger2.002
+    400036: LFinger2.003
+    400038: LFinger2.003_end
+    400040: LFinger3
+    400042: LFinger3.001
+    400044: LFinger3.001_end
+    400046: LFinger3.002
+    400048: LFinger3.003
+    400050: LFinger3.003_end
+    400052: LFoot
+    400054: LFoot.001
+    400056: LFoot.001_end
+    400058: LFoot_end
+    400060: LHand
+    400062: LHand.001
+    400064: LLegBottom
+    400066: LLegBottom.001
+    400068: LLegMid
+    400070: LLegMid.001
+    400072: LLegTop
+    400074: LLegTop.001
+    400076: LShoulder
+    400078: LShoulder.001
+    400080: neck
+    400082: robotEnemy
+    400084: //RootNode
+    400086: spineMid
+    400088: spineTop
+    4300000: robotEnemy
+    7400000: Armature|FIRE
+    7400002: Armature|IDLE
+    7400004: Armature|MELEE
+    7400006: Armature|MELEE.001
+    7400008: Armature|RUN
+    7400010: Armature|RUN.001
+    7400012: Armature|WALK
+    7400014: robotEnemy|RUN.001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: robotEnemy
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
