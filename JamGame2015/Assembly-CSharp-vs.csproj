@@ -65,6 +65,7 @@
      <Compile Include="Assets\Resources\Scripts\ObstructionHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\RTSCamera.cs" />
      <Compile Include="Assets\Resources\Scripts\Rotater.cs" />
+     <Compile Include="Assets\Resources\Scripts\SlowDown.cs" />
      <Compile Include="Assets\Resources\Scripts\StandardCamera.cs" />
      <Compile Include="Assets\Resources\Scripts\TargetSelector.cs" />
      <Compile Include="Assets\Resources\Scripts\TeleportInteraction.cs" />
