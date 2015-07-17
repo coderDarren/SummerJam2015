@@ -28,6 +28,7 @@ public class CharacterController : MonoBehaviour {
         public string FORWARD_AXIS = "Vertical";
         public string TURN_AXIS = "Horizontal";
         public string JUMP_AXIS = "Jump";
+        public string WALK_AXIS = "Walk";
     }
 
     public MoveSettings moveSetting = new MoveSettings();
@@ -37,7 +38,7 @@ public class CharacterController : MonoBehaviour {
     Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
     Rigidbody rBody;
-    float forwardInput, turnInput, jumpInput;
+    float forwardInput, turnInput, jumpInput, walkInput;
     Vector3 previousMousePos = Vector3.zero;
     Vector3 currentMousePos = Vector3.zero;
     Ray groundCheckRay;
@@ -61,14 +62,20 @@ public class CharacterController : MonoBehaviour {
         else
             Debug.LogError("The character needs a rigidbody.");
 
-        forwardInput = turnInput = jumpInput = 0;
+        forwardInput = turnInput = jumpInput = walkInput = 0;
     }
+
+    //floats returned for the animator controller
+    public float GetRunInput() { return forwardInput; }
+    public float GetJumpInput() { return jumpInput; }
+    public float GetWalkInput() { return walkInput; }
 
     void GetInput()
     {
-        forwardInput = Input.GetAxis(inputSetting.FORWARD_AXIS); //interpolated
-        turnInput = Input.GetAxis(inputSetting.TURN_AXIS); //interpolated
-        jumpInput = Input.GetAxisRaw(inputSetting.JUMP_AXIS); //non-interpolated
+        forwardInput = Input.GetAxisRaw(inputSetting.FORWARD_AXIS); 
+        turnInput = Input.GetAxisRaw(inputSetting.TURN_AXIS); 
+        jumpInput = Input.GetAxisRaw(inputSetting.JUMP_AXIS); 
+        walkInput = Input.GetAxisRaw(inputSetting.WALK_AXIS);
     }
 
     void Update()
@@ -95,10 +102,13 @@ public class CharacterController : MonoBehaviour {
         {
             //move
             velocity.z = moveSetting.forwardVel * forwardInput;
+            if (walkInput > 0)
+                velocity.z /= 2.5f;
         }
         else
             //zero velocity
             velocity.z = 0;
+
     }
 
     void Turn()

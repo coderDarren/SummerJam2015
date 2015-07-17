@@ -52,6 +52,7 @@
      <Compile Include="Assets\Resources\Scripts\Camera\StandardCamera.cs" />
      <Compile Include="Assets\Resources\Scripts\Camera\TargetSelector.cs" />
      <Compile Include="Assets\Resources\Scripts\Camera\TopDownCamera.cs" />
+     <Compile Include="Assets\Resources\Scripts\Character\CharacterAnimatorController.cs" />
      <Compile Include="Assets\Resources\Scripts\Character\CharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\Character\ObstructionHandler.cs" />
      <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformAction.cs" />
