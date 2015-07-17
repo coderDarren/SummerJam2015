@@ -136,7 +136,1141 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: BLAST
+      takeName: BLAST
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HOVERING
+      takeName: HOVERING
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HOVERSTART
+      takeName: HOVERSTART
+      firstFrame: -1
+      lastFrame: -1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LIFT
+      takeName: LIFT
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ProjectionHOLD
+      takeName: ProjectionHOLD
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RUN
+      takeName: RUN
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: StartProjection
+      takeName: StartProjection
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WALK
+      takeName: WALK
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/BaseSpine
+        weight: 1
+      - path: Armature/BaseSpine/Spine1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/Bone/Bone_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger1/LFinger1_001/LFinger1_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger2/LFinger2_001/LFinger2_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder/LeftBicep/LeftForearm/LWrist/LFinger3/LFinger3_001/LFinger3_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger1_003/LFinger1_004/LFinger1_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger2_003/LFinger2_004/LFinger2_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/LShoulder_001/LeftBicep_001/LeftForearm_001/LWrist_001/LFinger3_003/LFinger3_004/LFinger3_005
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head
+        weight: 1
+      - path: Armature/BaseSpine/Spine1/Neck/Head/Hood
+        weight: 1
+      - path: Armature/LHip
+        weight: 1
+      - path: Armature/LHip/LLegTop
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootBack
+        weight: 1
+      - path: Armature/LHip/LLegTop/LLegMid/LLegBottom/LFootFront
+        weight: 1
+      - path: Armature/RHip
+        weight: 1
+      - path: Armature/RHip/RLegTop
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootBack
+        weight: 1
+      - path: Armature/RHip/RLegTop/RLegMid/RLegBottom/RFootFront
+        weight: 1
+      - path: Character
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

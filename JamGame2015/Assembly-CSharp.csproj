@@ -46,16 +46,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\BlockTransformAction.cs" />
-     <Compile Include="Assets\Resources\Scripts\BlockTransformOptions.cs" />
-     <Compile Include="Assets\Resources\Scripts\BlockTransformer.cs" />
-     <Compile Include="Assets\Resources\Scripts\BloomControl.cs" />
-     <Compile Include="Assets\Resources\Scripts\CharacterController.cs" />
-     <Compile Include="Assets\Resources\Scripts\CollisionHandler.cs" />
-     <Compile Include="Assets\Resources\Scripts\DistortedForce.cs" />
-     <Compile Include="Assets\Resources\Scripts\InteractableObject.cs" />
-     <Compile Include="Assets\Resources\Scripts\InteractiveCursor.cs" />
-     <Compile Include="Assets\Resources\Scripts\Magnet.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\BloomControl.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\CollisionHandler.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\RTSCamera.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\StandardCamera.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\TargetSelector.cs" />
+     <Compile Include="Assets\Resources\Scripts\Camera\TopDownCamera.cs" />
+     <Compile Include="Assets\Resources\Scripts\Character\CharacterController.cs" />
+     <Compile Include="Assets\Resources\Scripts\Character\ObstructionHandler.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformAction.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformOptions.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformer.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\InteractableObject.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\InteractiveCursor.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\Magnet.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\TeleportInteraction.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactables\Teleporter.cs" />
      <Compile Include="Assets\Resources\Scripts\Menu\ButtonBehavior.cs" />
      <Compile Include="Assets\Resources\Scripts\Menu\ButtonBrancher.cs" />
      <Compile Include="Assets\Resources\Scripts\Menu\ButtonFader.cs" />
@@ -63,15 +69,9 @@
      <Compile Include="Assets\Resources\Scripts\Menu\MenuController.cs" />
      <Compile Include="Assets\Resources\Scripts\Menu\Tooltip.cs" />
      <Compile Include="Assets\Resources\Scripts\Menu\Transition.cs" />
-     <Compile Include="Assets\Resources\Scripts\ObstructionHandler.cs" />
-     <Compile Include="Assets\Resources\Scripts\RTSCamera.cs" />
-     <Compile Include="Assets\Resources\Scripts\Rotater.cs" />
-     <Compile Include="Assets\Resources\Scripts\SlowDown.cs" />
-     <Compile Include="Assets\Resources\Scripts\StandardCamera.cs" />
-     <Compile Include="Assets\Resources\Scripts\TargetSelector.cs" />
-     <Compile Include="Assets\Resources\Scripts\TeleportInteraction.cs" />
-     <Compile Include="Assets\Resources\Scripts\Teleporter.cs" />
-     <Compile Include="Assets\Resources\Scripts\TopDownCamera.cs" />
+     <Compile Include="Assets\Resources\Scripts\Powers\DistortedForce.cs" />
+     <Compile Include="Assets\Resources\Scripts\Powers\SlowDown.cs" />
+     <Compile Include="Assets\Resources\Scripts\Props\Rotater.cs" />
      <Compile Include="Assets\Resources\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\Resources\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\Resources\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
