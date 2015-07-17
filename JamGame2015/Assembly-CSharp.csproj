@@ -55,6 +55,7 @@
      <Compile Include="Assets\Resources\Scripts\Character\CharacterAnimatorController.cs" />
      <Compile Include="Assets\Resources\Scripts\Character\CharacterController.cs" />
      <Compile Include="Assets\Resources\Scripts\Character\ObstructionHandler.cs" />
+     <Compile Include="Assets\Resources\Scripts\Character\Powers.cs" />
      <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformAction.cs" />
      <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformOptions.cs" />
      <Compile Include="Assets\Resources\Scripts\Interactables\BlockTransformer.cs" />

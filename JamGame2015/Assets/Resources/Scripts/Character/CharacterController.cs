@@ -48,7 +48,8 @@ public class CharacterController : MonoBehaviour {
         get { return targetRotation; }
     }
 
-    bool Grounded()
+    //public to be used by animator controller
+    public bool Grounded()
     {
         groundCheckRay = new Ray(transform.position, Vector3.down);
         return Physics.SphereCast(groundCheckRay, moveSetting.groundCheckRadius, moveSetting.distToGrounded, moveSetting.ground);
@@ -67,7 +68,6 @@ public class CharacterController : MonoBehaviour {
 
     //floats returned for the animator controller
     public float GetRunInput() { return forwardInput; }
-    public float GetJumpInput() { return jumpInput; }
     public float GetWalkInput() { return walkInput; }
 
     void GetInput()

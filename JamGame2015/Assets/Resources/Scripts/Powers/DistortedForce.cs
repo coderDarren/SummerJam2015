@@ -22,8 +22,10 @@ public class DistortedForce : MonoBehaviour {
         currScale += expandRate;
 
         if (currScale > size.max)
-            currScale = size.min;
+            GameObject.Destroy(gameObject);
 
         transform.localScale = new Vector3(currScale, currScale, currScale);
     }
+
+
 }
