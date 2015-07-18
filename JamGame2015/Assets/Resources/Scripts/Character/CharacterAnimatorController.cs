@@ -6,6 +6,8 @@ using System.Collections;
 
 public class CharacterAnimatorController : MonoBehaviour {
 
+    public Transform upperBody;
+
     CharacterController character;
     Powers powers;
     Animator anim;
@@ -22,6 +24,11 @@ public class CharacterAnimatorController : MonoBehaviour {
         anim.SetFloat("Run", character.GetRunInput());
         anim.SetFloat("Walk", character.GetWalkInput());
         anim.SetBool("Grounded", character.Grounded());
-        anim.SetFloat("Push", powers.GetPushInput());
+        anim.SetBool("Pushing", powers.Pushing());
+        anim.SetBool("Holding", powers.Holding());
+
+        if (powers.Holding() && (character.GetRunInput() > 0 || character.GetWalkInput() > 0))
+        {
+        }
     }
 }

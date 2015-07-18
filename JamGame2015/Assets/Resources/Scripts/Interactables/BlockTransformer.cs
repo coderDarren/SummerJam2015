@@ -62,7 +62,6 @@ public class BlockTransformer : MonoBehaviour {
     {
         if (coll.transform.tag == "TransformBlock")
         {
-            Debug.Log("Collision detected.");
             collisionCount++;
             colliding = true;
         }
@@ -72,7 +71,6 @@ public class BlockTransformer : MonoBehaviour {
     {
         if (coll.transform.tag == "TransformBlock")
         {
-            Debug.Log("Collision exited.");
             if (collisionCount > 0)
                 collisionCount--;
 

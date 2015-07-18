@@ -126,10 +126,6 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -267,7 +263,7 @@ ModelImporter:
       name: BLAST
       takeName: BLAST
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

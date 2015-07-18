@@ -8,6 +8,10 @@ public class InteractiveCursor : MonoBehaviour
 
     public delegate void BlockTransformerClick(GameObject block);
     public static event BlockTransformerClick OpenTransformOptions;
+    public static event BlockTransformerClick CloseTransformOptions;
+    public delegate void PickUpClick (GameObject item);
+    public static event PickUpClick PickupItem;
+    public static event PickUpClick DropItem;
 
     #endregion
 
@@ -75,16 +79,35 @@ public class InteractiveCursor : MonoBehaviour
 
         //below here, check for all possible interaction objects and handle their interactions accordingly
 
-        if (InteractionObject.GetComponent<BlockTransformer>()) //a block transform interaction
+        if (objectUnderCursor.GetComponent<BlockTransformer>()) //a block transform interaction
         {
             //reset last selection colors
-            InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
+            if (InteractionObject.GetComponent<BlockTransformer>())
+                InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
             //set new interaction object
             InteractionObject = objectUnderCursor;
             //set new selection colors
             InteractionObject.GetComponent<BlockTransformer>().SetChildrenColors();
             //reset selection if you are clicking what your cursor is already on
             OpenTransformOptions(InteractionObject);
+        }
+        else
+        {
+            CloseTransformOptions(InteractionObject);
+        }
+        if (objectUnderCursor.GetComponent<Magnet>())
+        {
+            InteractionObject = objectUnderCursor;
+            PickupItem(InteractionObject);
+        }
+        else
+        {
+            try
+            {
+                DropItem(InteractionObject);
+            }
+            catch (System.NullReferenceException)
+            { }
         }
     }
 

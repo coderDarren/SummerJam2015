@@ -9,11 +9,13 @@ public class BlockTransformOptions : MonoBehaviour
     void OnEnable()
     {
         InteractiveCursor.OpenTransformOptions += OpenTransformOptions;
+        InteractiveCursor.CloseTransformOptions += CancelTransformation;
     }
 
     void OnDisable()
     {
         InteractiveCursor.OpenTransformOptions -= OpenTransformOptions;
+        InteractiveCursor.CloseTransformOptions -= CancelTransformation;
     }
 
     void OpenTransformOptions(GameObject blockObject)
@@ -24,7 +26,17 @@ public class BlockTransformOptions : MonoBehaviour
         menu.transform.parent = transform;
     }
 
-    void CancelTransformation()
+    void CancelTransformation(GameObject obj)
+    {
+        Destroy(menu);
+        if (InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>())
+        {
+            InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
+            InteractiveCursor.InteractionObject = null;
+        }
+    }
+
+    void Cancel()
     {
         Destroy(menu);
         InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
