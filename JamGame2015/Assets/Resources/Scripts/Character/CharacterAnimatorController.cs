@@ -11,12 +11,14 @@ public class CharacterAnimatorController : MonoBehaviour {
     CharacterController character;
     Powers powers;
     Animator anim;
+   
 
     void Start()
     {
         character = GetComponent<CharacterController>();
         powers = GetComponent<Powers>();
         anim = GetComponent<Animator>();
+        
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class CharacterAnimatorController : MonoBehaviour {
         anim.SetBool("Grounded", character.Grounded());
         anim.SetBool("Pushing", powers.Pushing());
         anim.SetBool("Holding", powers.Holding());
+        anim.SetFloat("ReducedSpeed", character.ReducedSpeed);
 
         if (powers.Holding() && (character.GetRunInput() > 0 || character.GetWalkInput() > 0))
         {

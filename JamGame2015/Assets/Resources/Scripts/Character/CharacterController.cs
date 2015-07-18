@@ -43,6 +43,12 @@ public class CharacterController : MonoBehaviour {
     Vector3 currentMousePos = Vector3.zero;
     Ray groundCheckRay;
 
+    float _forwardVel = 0;
+    float _rotateVel = 0;
+    float _jumpVel = 0;
+    float _downAccel = 0;
+    float reducedSpeed = 1;
+
     public Quaternion TargetRotation
     {
         get { return targetRotation; }
@@ -54,6 +60,8 @@ public class CharacterController : MonoBehaviour {
         groundCheckRay = new Ray(transform.position, Vector3.down);
         return Physics.SphereCast(groundCheckRay, moveSetting.groundCheckRadius, moveSetting.distToGrounded, moveSetting.ground);
     }
+    public float ReducedSpeed { get { return reducedSpeed; } }
+
 
     void Start()
     {
@@ -64,6 +72,11 @@ public class CharacterController : MonoBehaviour {
             Debug.LogError("The character needs a rigidbody.");
 
         forwardInput = turnInput = jumpInput = walkInput = 0;
+
+        _forwardVel = moveSetting.forwardVel;
+        _rotateVel = moveSetting.rotateVel;
+        _jumpVel = moveSetting.jumpVel;
+        _downAccel = physSetting.downAccel;
     }
 
     //floats returned for the animator controller
@@ -101,7 +114,7 @@ public class CharacterController : MonoBehaviour {
         if (Mathf.Abs(forwardInput) > inputSetting.inputDelay)
         {
             //move
-            velocity.z = moveSetting.forwardVel * forwardInput;
+            velocity.z = _forwardVel * forwardInput;
             if (walkInput > 0)
                 velocity.z /= 2.5f;
         }
@@ -115,7 +128,7 @@ public class CharacterController : MonoBehaviour {
     {
         if (Mathf.Abs(turnInput) > inputSetting.inputDelay)
         {
-            targetRotation *= Quaternion.AngleAxis(moveSetting.rotateVel * turnInput, Vector3.up);
+            targetRotation *= Quaternion.AngleAxis(_rotateVel * turnInput, Vector3.up);
         }
         transform.rotation = targetRotation;
     }
@@ -125,7 +138,7 @@ public class CharacterController : MonoBehaviour {
         if (jumpInput > 0 && Grounded())
         {
             //jump
-            velocity.y = moveSetting.jumpVel;
+            velocity.y = _jumpVel;
         }
         else if (jumpInput == 0 && Grounded())
         {
@@ -136,7 +149,35 @@ public class CharacterController : MonoBehaviour {
         {
             //decrease velocity.y
             if (velocity.y > -10)
-                velocity.y -= physSetting.downAccel;
+                velocity.y -= _downAccel;
         }
+    }
+
+    void OnEnable()
+    {
+        SlowDown.AlterSpeed += AlterSpeed;
+    }
+
+    void OnDisable()
+    {
+        SlowDown.AlterSpeed -= AlterSpeed;
+    }
+
+    void AlterSpeed(float speedFactor)
+    {
+        _forwardVel = moveSetting.forwardVel * speedFactor;
+        if (speedFactor < 1)
+        {
+            _rotateVel = moveSetting.rotateVel * (speedFactor * 1.5f);
+            _jumpVel = moveSetting.jumpVel * (speedFactor * 3.2f);
+        }
+        else
+        {
+            _rotateVel = moveSetting.rotateVel * speedFactor;
+            _jumpVel = moveSetting.jumpVel * speedFactor;
+        }
+        _downAccel = physSetting.downAccel * speedFactor;
+
+        reducedSpeed = speedFactor;
     }
 }
