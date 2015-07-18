@@ -22,7 +22,7 @@ public class BlockTransformOptions : MonoBehaviour
     {
         if (menu)
             Destroy(menu);
-        menu = Instantiate(OptionsMenu, new Vector3(Screen.width - 100, Screen.height - 100, 0), Quaternion.identity) as GameObject;
+        menu = Instantiate(OptionsMenu, new Vector3(Screen.width / 2, Screen.height / 2, 0), Quaternion.identity) as GameObject;
         menu.transform.parent = transform;
     }
 

@@ -25,6 +25,7 @@ public class ButtonFader : MonoBehaviour {
         faded = false;
         buttonImage = GetComponent<Image>();
         buttonColor = buttonImage.color;
+        GetComponent<Button>().interactable = false;
         if (GetComponentInChildren<Text>())
         {
             txt = GetComponentInChildren<Text>();
@@ -63,5 +64,7 @@ public class ButtonFader : MonoBehaviour {
             textColor.a += rate;
             txt.color = textColor;
         }
+        if (faded)
+            GetComponent<Button>().interactable = true;
     }
 }

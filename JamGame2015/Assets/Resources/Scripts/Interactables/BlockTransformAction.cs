@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
 
@@ -49,15 +50,19 @@ public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData ped)
     {
-        targetRotation = Quaternion.Euler(newRotation) * initialRotation;
+        if (GetComponent<Button>().interactable)
+            targetRotation = Quaternion.Euler(newRotation) * initialRotation;
     }
 
     public void OnPointerExit(PointerEventData ped)
     {
-        if (!applied)
-            targetRotation = initialRotation;
-        else
-            applied = false; //must reset to false in case we come back to this button (we will want the rotation to be reset if we exit without applying)
+        if (GetComponent<Button>().interactable)
+        {
+            if (!applied)
+                targetRotation = initialRotation;
+            else
+                applied = false; //must reset to false in case we come back to this button (we will want the rotation to be reset if we exit without applying)
+        }
     }
 
     public void OnPointerClick(PointerEventData ped)
