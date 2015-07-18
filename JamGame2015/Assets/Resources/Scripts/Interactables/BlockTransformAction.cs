@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
-
+    
     public Color transformationBlockedColor = Color.red;
     public Vector3 newRotation;
 
@@ -13,7 +13,6 @@ public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointe
     Quaternion targetRotation;
     Quaternion initialRotation;
     Quaternion currentRotation;
-    bool applied = false;
     bool allowed = true;
     bool transforming = false;
 
@@ -28,8 +27,6 @@ public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointe
         targetRotation = initialRotation;
         currentRotation = initialRotation;
     }
-
-    
 
     void Update()
     {
@@ -51,36 +48,42 @@ public class BlockTransformAction : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData ped)
     {
         if (GetComponent<Button>().interactable)
+        {
+            BlockTransformOptions.onButtons++;
+            transformBlock.transform.rotation = initialRotation;
             targetRotation = Quaternion.Euler(newRotation) * initialRotation;
+        }
     }
 
     public void OnPointerExit(PointerEventData ped)
     {
         if (GetComponent<Button>().interactable)
         {
-            if (!applied)
+            BlockTransformOptions.onButtons--;
+            if (BlockTransformOptions.onButtons == 0)
+            {
+                transformBlock.transform.rotation = initialRotation;
                 targetRotation = initialRotation;
-            else
-                applied = false; //must reset to false in case we come back to this button (we will want the rotation to be reset if we exit without applying)
+            }
         }
     }
 
     public void OnPointerClick(PointerEventData ped)
     {
-        
-        if (allowed && !transforming)
+        if (GetComponent<Button>().interactable)
         {
-            applied = true;
-            block.ResetChildrenColors();
-            InteractiveCursor.InteractionObject = null;
-            Destroy(transform.parent.parent.gameObject);
-        }
-        else
-        {
-            //play some noise perhaps (auditory que)
+            if (allowed && !transforming)
+            {
+                block.ResetChildrenColors();
+                InteractiveCursor.InteractionObject = null;
+                Destroy(transform.parent.parent.gameObject);
+            }
+            else
+            {
+                //play some noise perhaps (auditory que)
+            }
         }
     }
-
 
     void CheckCollisions()
     {

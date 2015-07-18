@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BlockTransformOptions : MonoBehaviour
 {
+    public static int onButtons = 0; //this value will help determine if we need to reset transformations (see BlockTransformAction.cs)
+
     public GameObject OptionsMenu;
     GameObject menu;
 
