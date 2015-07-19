@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Menu\Tooltip.cs" />
      <Compile Include="Assets\Scripts\Menu\Transition.cs" />
      <Compile Include="Assets\Scripts\Powers\DistortedForce.cs" />
+     <Compile Include="Assets\Scripts\Powers\DoFManager.cs" />
      <Compile Include="Assets\Scripts\Powers\SlowDown.cs" />
      <Compile Include="Assets\Scripts\Props\Rotater.cs" />
      <Compile Include="Assets\Scripts\UI\ActionProgressBar.cs" />
