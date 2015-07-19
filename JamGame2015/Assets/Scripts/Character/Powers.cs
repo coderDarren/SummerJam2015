@@ -59,7 +59,7 @@ public class Powers : MonoBehaviour {
     {
         GetInput();
         RunTimers();
-       
+        
         if (CanPush() && pushInput > 0)
         {
             ActivatePush();
@@ -76,7 +76,11 @@ public class Powers : MonoBehaviour {
         {
             PickObjectUp();
         }
-        Debug.Log(Holding());
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            DropObject(pickUpObject);
+        }
     }
 
     void ActivatePush()
