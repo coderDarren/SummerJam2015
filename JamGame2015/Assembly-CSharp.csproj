@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Powers\DistortedForce.cs" />
      <Compile Include="Assets\Scripts\Powers\SlowDown.cs" />
      <Compile Include="Assets\Scripts\Props\Rotater.cs" />
+     <Compile Include="Assets\Scripts\UI\RotationDial.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

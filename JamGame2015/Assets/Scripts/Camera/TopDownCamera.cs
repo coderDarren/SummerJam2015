@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TopDownCamera : MonoBehaviour {
 
+    public delegate void OrbitControl(float degrees);
+    public static event OrbitControl UpdateYOrbitValue;
+
     public Transform target;
 
     [System.Serializable]
@@ -34,6 +37,8 @@ public class TopDownCamera : MonoBehaviour {
         //bool for allowing orbit
         public float xRotation = -65;
         public float yRotation = -180;
+        public float maxYRotation = 200;
+        public float minYRotation = -200;
         public bool allowOrbit = true;
         public float yOrbitSmooth = 0.5f;
     }
@@ -166,6 +171,13 @@ public class TopDownCamera : MonoBehaviour {
         if (mouseOrbitInput > 0)
         {
             orbit.yRotation += (currentMousePosition.x - previousMousePosition.x) * orbit.yOrbitSmooth;
+
+            if (orbit.yRotation > orbit.maxYRotation)
+                orbit.yRotation = orbit.maxYRotation;
+            if (orbit.yRotation < orbit.minYRotation)
+                orbit.yRotation = orbit.minYRotation;
+
+            UpdateYOrbitValue(orbit.yRotation);
         }
     }
 

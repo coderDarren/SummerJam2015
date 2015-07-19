@@ -53,7 +53,7 @@ public class BlockTransformer : MonoBehaviour {
         BoxCollider[] cols = GetComponentsInChildren<BoxCollider>();
         foreach (BoxCollider col in cols)
         {
-            col.isTrigger = trigger;
+            col.enabled = trigger;
         }
     }
 

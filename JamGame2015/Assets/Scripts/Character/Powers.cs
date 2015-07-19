@@ -86,7 +86,7 @@ public class Powers : MonoBehaviour {
 
     void PickObjectUp()
     {
-        pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, transform.position + (Vector3.up * 2 + Vector3.forward * 8), 5 * Time.deltaTime);
+        pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 2 + Vector3.forward * 8), 5 * Time.deltaTime);
     }
 
     void OnEnable()

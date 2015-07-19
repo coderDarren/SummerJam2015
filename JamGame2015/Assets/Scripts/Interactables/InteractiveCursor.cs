@@ -94,7 +94,12 @@ public class InteractiveCursor : MonoBehaviour
         }
         else
         {
-            CloseTransformOptions();
+            try
+            {
+                CloseTransformOptions();
+            }
+            catch (System.NullReferenceException)
+            { }
         }
         if (objectUnderCursor.GetComponent<Magnet>())
         {
