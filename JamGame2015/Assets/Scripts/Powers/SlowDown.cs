@@ -5,6 +5,9 @@ public class SlowDown : MonoBehaviour {
 
     public delegate void TimeandSpace(float speedFactor);
     public static event TimeandSpace AlterSpeed;
+    public delegate void ProgressBar(float max, float current);
+    public static event ProgressBar UpdateCooldown;
+    public static event ProgressBar UpdateDuration;
 
     public string INPUT_AXIS = "SlowTime";
 	public float speedFactor = 0.5f;
@@ -25,8 +28,10 @@ public class SlowDown : MonoBehaviour {
             {
                 activated = false;
                 cooldownTimer = 0; //start cooldown, the power was used completely
+                durationTimer = 0.1f;
                 AlterSpeed(1);
             }
+            
         }
         else
         {
@@ -39,6 +44,7 @@ public class SlowDown : MonoBehaviour {
                 cooldownTimer += Time.deltaTime;
                 canActivate = false;
             }
+            
         }
     }
 
@@ -51,6 +57,7 @@ public class SlowDown : MonoBehaviour {
                 {
                     AlterSpeed(speedFactor);
                     durationTimer = 0; //reset duration, the power has been activated
+                    cooldownTimer = 0.05f;
                 }
                 else //cannot be actived if cooldown is still charging
                     activated = false;
@@ -59,9 +66,12 @@ public class SlowDown : MonoBehaviour {
             {
                 AlterSpeed(1);
                 cooldownTimer = 0; //start cooldown, the power was de-activated
+                durationTimer = 0.1f;
             }
 		}
 
         RunTimers();
+        UpdateDuration(duration, durationTimer);
+        UpdateCooldown(cooldown, cooldownTimer);
 	}
 }
