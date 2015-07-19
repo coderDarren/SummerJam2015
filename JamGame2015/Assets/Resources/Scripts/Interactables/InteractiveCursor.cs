@@ -8,7 +8,8 @@ public class InteractiveCursor : MonoBehaviour
 
     public delegate void BlockTransformerClick(GameObject block);
     public static event BlockTransformerClick OpenTransformOptions;
-    public static event BlockTransformerClick CloseTransformOptions;
+    public delegate void CancelTransformerOptions();
+    public static event CancelTransformerOptions CloseTransformOptions;
     public delegate void PickUpClick (GameObject item);
     public static event PickUpClick PickupItem;
     public static event PickUpClick DropItem;
@@ -93,7 +94,7 @@ public class InteractiveCursor : MonoBehaviour
         }
         else
         {
-            CloseTransformOptions(InteractionObject);
+            CloseTransformOptions();
         }
         if (objectUnderCursor.GetComponent<Magnet>())
         {

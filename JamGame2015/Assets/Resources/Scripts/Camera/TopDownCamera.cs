@@ -11,6 +11,7 @@ public class TopDownCamera : MonoBehaviour {
         //distance from our target
         //bools for zooming and smoothfollowing
         //min and max zoom settings
+        public Vector3 targetPosOffset = new Vector3(0, 0, 0);
         public float distanceFromTarget = -50;
         public bool allowZoom = true;
         public float zoomSmooth = 100;
@@ -22,6 +23,8 @@ public class TopDownCamera : MonoBehaviour {
 
         [HideInInspector]
         public float newDistance = -50; //used for smooth zooming - gives us a "destination" zoom
+        [HideInInspector]
+        public float adjustmentDistance = -8;
     }
 
     [System.Serializable]
@@ -46,7 +49,10 @@ public class TopDownCamera : MonoBehaviour {
     public OrbitSettings orbit = new OrbitSettings();
     public InputSettings input = new InputSettings();
 
+    CollisionHandler collision;
+    Vector3 targetPos = Vector3.zero;
     Vector3 destination = Vector3.zero;
+    Vector3 adjustedDestination = Vector3.zero; 
     Vector3 camVelocity = Vector3.zero;
     Vector3 currentMousePosition = Vector3.zero;
     Vector3 previousMousePosition = Vector3.zero;
@@ -57,9 +63,13 @@ public class TopDownCamera : MonoBehaviour {
         //setting camera target
         SetCameraTarget(target);
 
+        collision = GetComponent<CollisionHandler>();
+
         if (target)
         {
             MoveToTarget();
+            collision.Initialize(Camera.main);
+            collision.UpdateCollisionHandler(destination, targetPos);
         }
     }
 
@@ -102,27 +112,48 @@ public class TopDownCamera : MonoBehaviour {
             MoveToTarget();
             LookAtTarget();
             MouseOrbitTarget();
+
+            collision.UpdateCollisionHandler(destination, targetPos);
+            position.adjustmentDistance = collision.GetAdjustedDistanceWithRayFrom(targetPos);
         }
     }
 
     void MoveToTarget()
     {
         //handling getting our camera to its destination position
-        destination = target.position;
-        destination += Quaternion.Euler(orbit.xRotation, orbit.yRotation, 0) * -Vector3.forward * position.distanceFromTarget;
+        targetPos = target.position + Vector3.up * position.targetPosOffset.y + Vector3.forward * position.targetPosOffset.z + transform.TransformDirection(Vector3.right * position.targetPosOffset.x); 
+        destination = Quaternion.Euler(orbit.xRotation, orbit.yRotation, 0) * -Vector3.forward * position.distanceFromTarget;
+        destination += targetPos;
 
-        if (position.smoothFollow)
+        if (collision.colliding)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, destination, ref camVelocity, position.smooth);
+            adjustedDestination = Quaternion.Euler(orbit.xRotation, orbit.yRotation, 0) * Vector3.forward * position.adjustmentDistance;
+            adjustedDestination += targetPos;
+
+            if (position.smoothFollow)
+            {
+                //use smooth damp function
+                transform.position = Vector3.SmoothDamp(transform.position, adjustedDestination, ref camVelocity, position.smooth);
+            }
+            else
+                transform.position = adjustedDestination;
         }
         else
-            transform.position = destination;
+        {
+            if (position.smoothFollow)
+            {
+                //use smooth damp function
+                transform.position = Vector3.SmoothDamp(transform.position, destination, ref camVelocity, position.smooth);
+            }
+            else
+                transform.position = destination;
+        }
     }
 
     void LookAtTarget()
     {
         //handling getting our camera to look at the target at all times
-        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(targetPos - transform.position);
         transform.rotation = targetRotation;
     }
 

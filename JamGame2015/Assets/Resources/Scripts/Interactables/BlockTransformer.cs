@@ -44,6 +44,16 @@ public class BlockTransformer : MonoBehaviour {
         {
             child.SetMaterialColors(toColor);
             child.selected = true;
+            
+        }
+    }
+
+    public void SetCollidersToTrigger(bool trigger)
+    {
+        BoxCollider[] cols = GetComponentsInChildren<BoxCollider>();
+        foreach (BoxCollider col in cols)
+        {
+            col.isTrigger = trigger;
         }
     }
 
@@ -53,30 +63,32 @@ public class BlockTransformer : MonoBehaviour {
         foreach (BlockTransformer child in children)
         {
             if (child.colliding)
+            {
                 return true;
+            }
         }
         return false;
     }
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.transform.tag == "TransformBlock")
-        {
+        //if (coll.transform.tag == "TransformBlock")
+        //{
             collisionCount++;
             colliding = true;
-        }
+        //}
     }
 
     void OnTriggerExit(Collider coll)
     {
-        if (coll.transform.tag == "TransformBlock")
-        {
+        //if (coll.transform.tag == "TransformBlock")
+        //{
             if (collisionCount > 0)
                 collisionCount--;
 
             if (collisionCount == 0)
                 colliding = false;
-        }
+        //}
     }
 
 }

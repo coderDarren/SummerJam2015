@@ -125,7 +125,6 @@ public class StandardCamera : MonoBehaviour
         MouseOrbitTarget();
 
         collision.UpdateCollisionHandler(destination, targetPos);
-
         position.adjustmentDistance = collision.GetAdjustedDistanceWithRayFrom(targetPos);
     }
 

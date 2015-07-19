@@ -3,22 +3,104 @@ using System.Collections;
 
 public class BlockTransformOptions : MonoBehaviour
 {
-    public static int onButtons = 0; //this value will help determine if we need to reset transformations (see BlockTransformAction.cs)
-
     public GameObject OptionsMenu;
+    public Color transformationBlockedColor = Color.red;
+
+    BlockTransformer block;
+    GameObject transformBlock;
+    Quaternion targetRotation;
+    Quaternion initialRotation;
+    Quaternion currentRotation;
+    bool allowed = true;
+    bool transforming = false;
+    bool initialized = false;
+
     GameObject menu;
+    float xVel, yVel, zVel;
 
-    void OnEnable()
+
+    #region Transforming Blocks
+
+    void Initialize()
     {
-        InteractiveCursor.OpenTransformOptions += OpenTransformOptions;
-        InteractiveCursor.CloseTransformOptions += CancelTransformation;
+        transformBlock = InteractiveCursor.InteractionObject;
+        block = transformBlock.GetComponent<BlockTransformer>();
+
+        initialRotation = transformBlock.transform.rotation;
+        targetRotation = initialRotation;
+        currentRotation = initialRotation;
+
+        initialized = true;
     }
 
-    void OnDisable()
+    void Update()
     {
-        InteractiveCursor.OpenTransformOptions -= OpenTransformOptions;
-        InteractiveCursor.CloseTransformOptions -= CancelTransformation;
+        if (initialized)
+        {
+            if (currentRotation != targetRotation)
+            {
+                transforming = true;
+
+                currentRotation = Quaternion.Lerp(currentRotation, targetRotation, 10 * Time.deltaTime);
+                transformBlock.transform.rotation = currentRotation;
+            }
+            else
+            {
+                transforming = false;
+            }
+
+            CheckCollisions();
+        }
     }
+
+    void SetTargetRotation(Vector3 newRotation)
+    {
+        targetRotation = Quaternion.Euler(newRotation) * initialRotation;
+    }
+
+    void HandleButtonClick()
+    {
+        if (allowed && !transforming)
+        {
+            CancelTransformation();
+        }
+        else
+        {
+            //play some noise perhaps (auditory que)
+        }
+    }
+
+    void ResetBlocks()
+    {
+        transformBlock.transform.rotation = initialRotation;
+        targetRotation = initialRotation;
+    }
+
+    void CheckCollisions()
+    {
+        if (block.CollisionInChildren())
+        {
+            if (block.status != BlockTransformer.Status.Blocked) //if we are just now switching to blocked 
+                block.SetChildrenColors(transformationBlockedColor);//we need to change the color of the blocks
+
+            block.status = BlockTransformer.Status.Blocked;
+            allowed = false;
+            block.SetCollidersToTrigger(true);
+        }
+        else
+        {
+            if (block.status != BlockTransformer.Status.Unblocked) //if we are just now switching to unblocked 
+                block.SetChildrenColors();//we need to change the color of the blocks
+
+            block.status = BlockTransformer.Status.Unblocked;
+            allowed = true;
+            block.SetCollidersToTrigger(false);
+        }
+    }
+
+    #endregion
+
+    #region UI
 
     void OpenTransformOptions(GameObject blockObject)
     {
@@ -26,22 +108,34 @@ public class BlockTransformOptions : MonoBehaviour
             Destroy(menu);
         menu = Instantiate(OptionsMenu, new Vector3(Screen.width / 2, Screen.height / 2, 0), Quaternion.identity) as GameObject;
         menu.transform.parent = transform;
+        Initialize();
     }
 
-    void CancelTransformation(GameObject obj)
-    {
-        Destroy(menu);
-        if (InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>())
-        {
-            InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
-            InteractiveCursor.InteractionObject = null;
-        }
-    }
-
-    void Cancel()
+    void CancelTransformation()
     {
         Destroy(menu);
         InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
         InteractiveCursor.InteractionObject = null;
+        initialized = false;
+    }
+
+    #endregion
+
+    void OnEnable()
+    {
+        InteractiveCursor.OpenTransformOptions += OpenTransformOptions;
+        InteractiveCursor.CloseTransformOptions += CancelTransformation;
+        BlockTransformAction.HandleButtonClick += HandleButtonClick;
+        BlockTransformAction.SetTargetRotation += SetTargetRotation;
+        BlockTransformAction.ResetBlocks += ResetBlocks;
+    }
+
+    void OnDisable()
+    {
+        InteractiveCursor.OpenTransformOptions -= OpenTransformOptions;
+        InteractiveCursor.CloseTransformOptions -= CancelTransformation;
+        BlockTransformAction.HandleButtonClick -= HandleButtonClick;
+        BlockTransformAction.SetTargetRotation -= SetTargetRotation;
+        BlockTransformAction.ResetBlocks -= ResetBlocks;
     }
 }
