@@ -16,7 +16,6 @@ public class InteractiveCursor : MonoBehaviour
     public delegate void CancelMagnetOptions();
     public static event CancelMagnetOptions CloseMagnetOptions;
 
-
     #endregion
 
     public static GameObject InteractionObject;
@@ -94,31 +93,30 @@ public class InteractiveCursor : MonoBehaviour
             InteractionObject.GetComponent<BlockTransformer>().SetChildrenColors();
             //reset selection if you are clicking what your cursor is already on
             OpenTransformOptions(InteractionObject);
+
+            return;
         }
-        else
-        {
-            try
-            {
-                CloseTransformOptions();
-            }
-            catch (System.NullReferenceException)
-            { }
-        }
-        if (objectUnderCursor.GetComponent<Magnet>())
+        if (objectUnderCursor.GetComponent<Magnet>()) //a magnet interaction
         {
             InteractionObject = objectUnderCursor;
             OpenMagnetOptions(InteractionObject);
             //PickupItem(InteractionObject);
+
+            return;
         }
-        else
+
+        try
         {
-            try
-            {
-                //CloseMagnetOptions();
-            }
-            catch (System.NullReferenceException)
-            { }
+            CloseTransformOptions();
         }
+        catch (System.NullReferenceException)
+        { }
+        try
+        {
+            CloseMagnetOptions();
+        }
+        catch (System.NullReferenceException)
+        { }
     }
 
     bool Clicked(GameObject checkObject)

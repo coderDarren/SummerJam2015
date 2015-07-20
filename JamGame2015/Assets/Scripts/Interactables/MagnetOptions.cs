@@ -25,6 +25,7 @@ public class MagnetOptions : MonoBehaviour {
         InteractiveCursor.OpenMagnetOptions += OpenMagnetOptions;
         InteractiveCursor.CloseMagnetOptions += CloseMagnetOptions;
         MagnetAction.SetMagnetCharge += SetMagnetCharge;
+        MagnetAction.CloseMagnetOptions += CloseMagnetOptions;
     }
 
     void OnDisable()
@@ -32,6 +33,7 @@ public class MagnetOptions : MonoBehaviour {
         InteractiveCursor.OpenMagnetOptions -= OpenMagnetOptions;
         InteractiveCursor.CloseMagnetOptions -= CloseMagnetOptions;
         MagnetAction.SetMagnetCharge -= SetMagnetCharge;
+        MagnetAction.CloseMagnetOptions -= CloseMagnetOptions;
     }
 
     void OpenMagnetOptions(GameObject forMagnet)
