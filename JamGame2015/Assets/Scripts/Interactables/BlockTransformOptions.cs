@@ -81,20 +81,26 @@ public class BlockTransformOptions : MonoBehaviour
         if (block.CollisionInChildren())
         {
             if (block.status != BlockTransformer.Status.Blocked) //if we are just now switching to blocked 
+            {
                 block.SetChildrenColors(transformationBlockedColor);//we need to change the color of the blocks
+            }
 
             block.status = BlockTransformer.Status.Blocked;
             allowed = false;
             block.SetCollidersToTrigger(true);
+            block.SetChildrenLayers(block.gameObject, "TransformBlockColliding");
         }
         else
         {
             if (block.status != BlockTransformer.Status.Unblocked) //if we are just now switching to unblocked 
+            {
                 block.SetChildrenColors();//we need to change the color of the blocks
+            }
 
             block.status = BlockTransformer.Status.Unblocked;
             allowed = true;
             block.SetCollidersToTrigger(false);
+            block.SetChildrenLayers(block.gameObject, "TransformBlock");
         }
     }
 

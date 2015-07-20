@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour {
         public float distToGrounded = 0.1f;
         public float groundCheckRadius = 0.25f;
         public LayerMask ground;
+        public LayerMask alternateGround;
     }
 
     [System.Serializable]
@@ -59,6 +60,7 @@ public class CharacterController : MonoBehaviour {
     {
         groundCheckRay = new Ray(transform.position, Vector3.down);
         return Physics.SphereCast(groundCheckRay, moveSetting.groundCheckRadius, moveSetting.distToGrounded, moveSetting.ground);
+        
     }
     public float ReducedSpeed { get { return reducedSpeed; } }
 
@@ -162,6 +164,7 @@ public class CharacterController : MonoBehaviour {
     {
         SlowDown.AlterSpeed -= AlterSpeed;
     }
+
 
     void AlterSpeed(float speedFactor)
     {

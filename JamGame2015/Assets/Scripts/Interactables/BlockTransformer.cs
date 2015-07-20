@@ -44,16 +44,15 @@ public class BlockTransformer : MonoBehaviour {
         {
             child.SetMaterialColors(toColor);
             child.selected = true;
-            
         }
     }
 
     public void SetCollidersToTrigger(bool trigger)
     {
-        BoxCollider[] cols = GetComponentsInChildren<BoxCollider>();
-        foreach (BoxCollider col in cols)
+        BoxCollider[] bCols = GetComponentsInChildren<BoxCollider>();
+        foreach (BoxCollider col in bCols)
         {
-            col.enabled = trigger;
+            col.isTrigger = trigger;
         }
     }
 
@@ -70,25 +69,39 @@ public class BlockTransformer : MonoBehaviour {
         return false;
     }
 
+    public void SetChildrenLayers(GameObject obj, string layerName)
+    {
+        obj.layer = LayerMask.NameToLayer(layerName);
+
+        foreach (Transform child in obj.transform)
+        {
+            SetChildrenLayers(child.gameObject, layerName);
+        }
+    }
+
     void OnTriggerEnter(Collider coll)
     {
-        //if (coll.transform.tag == "TransformBlock")
-        //{
+        if (coll.transform.tag != "Player")
+        {
             collisionCount++;
             colliding = true;
-        //}
+            
+        }
     }
 
     void OnTriggerExit(Collider coll)
     {
-        //if (coll.transform.tag == "TransformBlock")
-        //{
+        if (coll.transform.tag != "Player")
+        {
             if (collisionCount > 0)
                 collisionCount--;
 
             if (collisionCount == 0)
+            {
                 colliding = false;
-        //}
+                
+            }
+        }
     }
 
 }
