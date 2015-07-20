@@ -13,6 +13,7 @@ public class MagnetOptions : MonoBehaviour {
     void SetMagnetCharge(Magnet.Charge charge)
     {
         magnet.charge = charge;
+        CloseMagnetOptions();
     }
 
     #endregion

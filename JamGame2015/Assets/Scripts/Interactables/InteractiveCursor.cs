@@ -84,6 +84,8 @@ public class InteractiveCursor : MonoBehaviour
 
         if (objectUnderCursor.GetComponent<BlockTransformer>()) //a block transform interaction
         {
+            if (InteractionObject.GetComponent<Magnet>())
+                CloseMagnetOptions();
             //reset last selection colors
             if (InteractionObject.GetComponent<BlockTransformer>())
                 InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
@@ -93,15 +95,16 @@ public class InteractiveCursor : MonoBehaviour
             InteractionObject.GetComponent<BlockTransformer>().SetChildrenColors();
             //reset selection if you are clicking what your cursor is already on
             OpenTransformOptions(InteractionObject);
-
+            Debug.Log("..");
             return;
         }
         if (objectUnderCursor.GetComponent<Magnet>()) //a magnet interaction
         {
+            if (InteractionObject.GetComponent<BlockTransformer>())
+                CloseTransformOptions();
             InteractionObject = objectUnderCursor;
             OpenMagnetOptions(InteractionObject);
-            //PickupItem(InteractionObject);
-
+            
             return;
         }
 
