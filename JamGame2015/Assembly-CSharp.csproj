@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\UI\ActionProgressBar.cs" />
      <Compile Include="Assets\Scripts\UI\CircularAttributeBar.cs" />
      <Compile Include="Assets\Scripts\UI\RotationDial.cs" />
+     <Compile Include="Assets\Scripts\UI\TipManager.cs" />
      <Compile Include="Assets\Scripts\UI\Wedge.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
