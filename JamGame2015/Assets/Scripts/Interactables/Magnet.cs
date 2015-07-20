@@ -22,6 +22,8 @@ public class Magnet : MonoBehaviour {
     Material lightMat;
     float delayTimer = 0;
 
+    float slowTimeFactor = 1;
+
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
@@ -56,7 +58,7 @@ public class Magnet : MonoBehaviour {
     {
         if (charge != Charge.None)
         {
-            rBody.AddForce(totalForce, ForceMode.Acceleration);
+            rBody.AddForce(totalForce * slowTimeFactor, ForceMode.Acceleration);
         }
     }
 
@@ -111,5 +113,20 @@ public class Magnet : MonoBehaviour {
 
         }
 
+    }
+
+    void OnEnable()
+    {
+        SlowDown.AlterSpeed += AlterSpeed;
+    }
+
+    void OnDisable()
+    {
+        SlowDown.AlterSpeed -= AlterSpeed;
+    }
+
+    void AlterSpeed(float speedFactor)
+    {
+        slowTimeFactor = speedFactor;
     }
 }

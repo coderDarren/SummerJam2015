@@ -90,19 +90,17 @@ public class Powers : MonoBehaviour {
 
     void PickObjectUp()
     {
-        pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 2 + Vector3.forward * 8), 5 * Time.deltaTime);
+        pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 2 + Vector3.forward * 8), 15 * Time.deltaTime);
     }
 
     void OnEnable()
     {
-        InteractiveCursor.PickupItem += HoldObject;
-        InteractiveCursor.DropItem += DropObject;
+        MagnetAction.PickUpMagnet += HoldObject;
     }
 
     void OnDisable()
     {
-        InteractiveCursor.PickupItem -= HoldObject;
-        InteractiveCursor.DropItem -= DropObject;
+        MagnetAction.PickUpMagnet -= HoldObject;
     }
 
     void HoldObject(GameObject obj)

@@ -63,6 +63,8 @@ public class InteractableObject : MonoBehaviour {
             ResetMaterialColors(); //then we can reset its color
     }
 
+
+
     void SetMaterialBlendMode(Material material, string BLEND_MODE)
     {
         switch (BLEND_MODE)

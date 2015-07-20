@@ -6,7 +6,7 @@ public class MagnetOptions : MonoBehaviour {
     public GameObject OptionsMenu;
 
     GameObject menu;
-    Magnet magnet;
+    public Magnet magnet;
 
     #region Magnet Manip
 
