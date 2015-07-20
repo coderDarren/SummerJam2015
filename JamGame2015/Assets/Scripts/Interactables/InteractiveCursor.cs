@@ -6,13 +6,16 @@ public class InteractiveCursor : MonoBehaviour
 
     #region Interaction Events Here!
 
-    public delegate void BlockTransformerClick(GameObject block);
-    public static event BlockTransformerClick OpenTransformOptions;
+    public delegate void ObjectClick(GameObject obj);
+    public static event ObjectClick OpenTransformOptions;
+    public static event ObjectClick OpenMagnetOptions;
+    public static event ObjectClick PickupItem;
+    public static event ObjectClick DropItem;
     public delegate void CancelTransformerOptions();
     public static event CancelTransformerOptions CloseTransformOptions;
-    public delegate void PickUpClick (GameObject item);
-    public static event PickUpClick PickupItem;
-    public static event PickUpClick DropItem;
+    public delegate void CancelMagnetOptions();
+    public static event CancelMagnetOptions CloseMagnetOptions;
+
 
     #endregion
 
@@ -53,7 +56,7 @@ public class InteractiveCursor : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
@@ -67,7 +70,7 @@ public class InteractiveCursor : MonoBehaviour
         }
         else
         {
-            
+
         }
     }
 
@@ -104,13 +107,14 @@ public class InteractiveCursor : MonoBehaviour
         if (objectUnderCursor.GetComponent<Magnet>())
         {
             InteractionObject = objectUnderCursor;
-            PickupItem(InteractionObject);
+            OpenMagnetOptions(InteractionObject);
+            //PickupItem(InteractionObject);
         }
         else
         {
             try
             {
-                DropItem(InteractionObject);
+                //CloseMagnetOptions();
             }
             catch (System.NullReferenceException)
             { }
