@@ -14,12 +14,13 @@ public class Magnet : MonoBehaviour {
     public float maxForceOnThis = 100;
 
     Rigidbody rBody;
-    public Collider[] proximityMagnets;
+    Collider[] proximityMagnets;
     Vector3 totalForce = Vector3.zero;
     Vector3 newForce = Vector3.zero;
     Vector3 prevForce = Vector3.zero;
     Collider coll;
     Material lightMat;
+    Light magnetLight;
     float delayTimer = 0;
 
     float slowTimeFactor = 1;
@@ -29,6 +30,7 @@ public class Magnet : MonoBehaviour {
         rBody = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
         lightMat = GetComponent<Renderer>().materials[1];
+        magnetLight = GetComponentInChildren<Light>();
     }
 
     void Update()
@@ -44,12 +46,15 @@ public class Magnet : MonoBehaviour {
         {
             case Charge.None:
                 lightMat.color = noChargeColor;
+                magnetLight.color = noChargeColor;
                 break;
             case Charge.Positive:
                 lightMat.color = posChargeColor;
+                magnetLight.color = posChargeColor;
                 break;
             case Charge.Negative:
                 lightMat.color = negChargeColor;
+                magnetLight.color = negChargeColor;
                 break;
         }
     }
