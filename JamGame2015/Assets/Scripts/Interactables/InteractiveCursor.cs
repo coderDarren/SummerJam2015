@@ -15,7 +15,7 @@ public class InteractiveCursor : MonoBehaviour
     public static event CancelTransformerOptions CloseTransformOptions;
     public delegate void CancelMagnetOptions();
     public static event CancelMagnetOptions CloseMagnetOptions;
-    public delegate void TeleportHandler(GameObject teleportee);
+    public delegate void TeleportHandler(GameObject teleportee, Vector3 teleportPos);
     public static event TeleportHandler Teleport;
 
     #endregion
@@ -33,6 +33,9 @@ public class InteractiveCursor : MonoBehaviour
     GameObject objectUnderCursor;
     Ray ray;
     RaycastHit hit;
+
+    float teleportCD = 2; //teleport cooldown
+    float teleportTimer = 0;
 
     void Start()
     {
@@ -57,7 +60,8 @@ public class InteractiveCursor : MonoBehaviour
 
     void Update()
     {
-
+        if (teleportTimer < teleportCD)
+            teleportTimer += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -111,7 +115,11 @@ public class InteractiveCursor : MonoBehaviour
         }
         if (objectUnderCursor.GetComponent<Teleporter>())
         {
-            Teleport(gameObject);
+            if (teleportTimer >= teleportCD) //helps prevent confusing teleport interactions
+            {
+                Teleport(gameObject, objectUnderCursor.GetComponent<Teleporter>().teleportLocation.position);
+                teleportTimer = 0;
+            }
         }
 
         try

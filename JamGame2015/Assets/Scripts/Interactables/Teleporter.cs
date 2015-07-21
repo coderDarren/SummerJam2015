@@ -12,10 +12,10 @@ public class Teleporter : MonoBehaviour {
         bloomControl = Camera.main.GetComponent<BloomControl>();
     }
 
-    void Teleport(GameObject teleportee)
+    void Teleport(GameObject teleportee, Vector3 teleportPos)
     {
         bloomControl.BoostIntensity(100);
-        teleportee.transform.position = teleportLocation.position + Vector3.up * 1.5f;
+        teleportee.transform.position = teleportPos + Vector3.up * 1.5f;
     }
 
     void OnEnable()
