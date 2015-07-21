@@ -64,7 +64,6 @@
      <Compile Include="Assets\Scripts\Interactables\Magnet.cs" />
      <Compile Include="Assets\Scripts\Interactables\MagnetAction.cs" />
      <Compile Include="Assets\Scripts\Interactables\MagnetOptions.cs" />
-     <Compile Include="Assets\Scripts\Interactables\TeleportInteraction.cs" />
      <Compile Include="Assets\Scripts\Interactables\Teleporter.cs" />
      <Compile Include="Assets\Scripts\Menu\ButtonBehavior.cs" />
      <Compile Include="Assets\Scripts\Menu\ButtonBrancher.cs" />

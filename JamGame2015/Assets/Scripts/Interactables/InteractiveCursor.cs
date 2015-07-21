@@ -15,6 +15,8 @@ public class InteractiveCursor : MonoBehaviour
     public static event CancelTransformerOptions CloseTransformOptions;
     public delegate void CancelMagnetOptions();
     public static event CancelMagnetOptions CloseMagnetOptions;
+    public delegate void TeleportHandler(GameObject teleportee);
+    public static event TeleportHandler Teleport;
 
     #endregion
 
@@ -106,6 +108,10 @@ public class InteractiveCursor : MonoBehaviour
             OpenMagnetOptions(InteractionObject);
             
             return;
+        }
+        if (objectUnderCursor.GetComponent<Teleporter>())
+        {
+            Teleport(gameObject);
         }
 
         try

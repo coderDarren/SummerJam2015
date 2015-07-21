@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Teleporter : MonoBehaviour {
 
-    public Vector3 teleportLocation;
+    public Transform teleportLocation;
 
     BloomControl bloomControl;
 
@@ -12,9 +12,19 @@ public class Teleporter : MonoBehaviour {
         bloomControl = Camera.main.GetComponent<BloomControl>();
     }
 
-    public void Teleport(GameObject teleportee)
+    void Teleport(GameObject teleportee)
     {
-        bloomControl.BoostIntensity(50);
-        teleportee.transform.position = teleportLocation;
+        bloomControl.BoostIntensity(100);
+        teleportee.transform.position = teleportLocation.position + Vector3.up * 1.5f;
+    }
+
+    void OnEnable()
+    {
+        InteractiveCursor.Teleport += Teleport;
+    }
+
+    void OnDisable()
+    {
+        InteractiveCursor.Teleport -= Teleport;
     }
 }

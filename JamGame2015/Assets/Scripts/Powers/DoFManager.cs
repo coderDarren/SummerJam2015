@@ -6,12 +6,11 @@ using UnityStandardAssets.ImageEffects;
 
 public class DoFManager : MonoBehaviour {
 
-    public float maxAperture = 4;
+    public float maxAperture = 4.5f;
     public float apertureSmooth = 1;
 
     DepthOfField dof;
-    float aperture = 0;
-    bool active;
+    bool active = false;
 
     void Start()
     {

@@ -20,6 +20,12 @@ public class SlowDown : MonoBehaviour {
     public float cooldownTimer = 0;
     bool activated = false;
     bool canActivate = true;
+    Vector3 _gravity; //this will be set to whatever the initial gravity setting is
+
+    void Start()
+    {
+        _gravity = Physics.gravity;
+    }
 
     void RunTimers()
     {
@@ -59,6 +65,7 @@ public class SlowDown : MonoBehaviour {
                 if (canActivate) //if the cooldown time has been reached
                 {
                     AlterSpeed(speedFactor);
+                    Physics.gravity *= speedFactor;
                     durationTimer = 0; //reset duration, the power has been activated
                     cooldownTimer = 0.05f;
                     SlowDownActive(true);
@@ -69,6 +76,7 @@ public class SlowDown : MonoBehaviour {
             else
             {
                 AlterSpeed(1);
+                Physics.gravity = _gravity;
                 cooldownTimer = 0; //start cooldown, the power was de-activated
                 durationTimer = 0.1f;
                 SlowDownActive(false);
