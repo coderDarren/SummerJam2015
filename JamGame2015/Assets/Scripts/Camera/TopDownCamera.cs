@@ -25,7 +25,7 @@ public class TopDownCamera : MonoBehaviour {
         public float smooth = 0.05f;
 
         [HideInInspector]
-        public float newDistance = -50; //used for smooth zooming - gives us a "destination" zoom
+        public float newDistance = -10; //used for smooth zooming - gives us a "destination" zoom
         [HideInInspector]
         public float adjustmentDistance = -8;
     }
@@ -76,6 +76,7 @@ public class TopDownCamera : MonoBehaviour {
             collision.Initialize(Camera.main);
             collision.UpdateCollisionHandler(destination, targetPos);
         }
+        position.newDistance = position.distanceFromTarget;
     }
 
     public void SetCameraTarget(Transform t)
