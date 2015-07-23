@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TransformButtonRotationHandler : MonoBehaviour {
 
+    public bool rotateWithCamera = true;
+
     RectTransform rt;
     float spriteRotationZ = 0;
     float spriteRotationX = 0;
@@ -26,13 +28,19 @@ public class TransformButtonRotationHandler : MonoBehaviour {
 
     void UpdateYOrbitValue(float degrees)
     {
-        spriteRotationZ = -degrees + 180; //cam rotation starts at -180, sprite rotation starts at 0
-        rt.eulerAngles = new Vector3(spriteRotationX, rt.eulerAngles.y, -spriteRotationZ);
+        if (rotateWithCamera)
+        {
+            spriteRotationZ = -degrees + 180; //cam rotation starts at -180, sprite rotation starts at 0
+            rt.eulerAngles = new Vector3(spriteRotationX, rt.eulerAngles.y, -spriteRotationZ);
+        }
     }
 
     void UpdateXOrbitValue(float degrees)
     {
-        spriteRotationX = degrees; //cam rotation starts at -180, sprite rotation starts at 0
-        rt.eulerAngles = new Vector3(spriteRotationX, rt.eulerAngles.y, rt.eulerAngles.z);
+        if (rotateWithCamera)
+        {
+            spriteRotationX = degrees; //cam rotation starts at -180, sprite rotation starts at 0
+            rt.eulerAngles = new Vector3(spriteRotationX, rt.eulerAngles.y, rt.eulerAngles.z);
+        }
     }
 }

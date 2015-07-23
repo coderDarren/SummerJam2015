@@ -79,7 +79,8 @@ public class Powers : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.V))
         {
-            DropObject(pickUpObject);
+            if (pickUpObject)
+                DropObject(pickUpObject);
         }
     }
 

@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Camera\BloomControl.cs" />
      <Compile Include="Assets\Scripts\Camera\CollisionHandler.cs" />
      <Compile Include="Assets\Scripts\Camera\RTSCamera.cs" />
