@@ -81,6 +81,9 @@
      <Compile Include="Assets\Scripts\UI\CircularAttributeBar.cs" />
      <Compile Include="Assets\Scripts\UI\EndLevelCheckPoint.cs" />
      <Compile Include="Assets\Scripts\UI\GameTimer.cs" />
+     <Compile Include="Assets\Scripts\UI\HelpWindow.cs" />
+     <Compile Include="Assets\Scripts\UI\HelpWindowManager.cs" />
+     <Compile Include="Assets\Scripts\UI\HelpWindowTrigger.cs" />
      <Compile Include="Assets\Scripts\UI\LevelCompleteButtons.cs" />
      <Compile Include="Assets\Scripts\UI\LevelCompleteStats.cs" />
      <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
