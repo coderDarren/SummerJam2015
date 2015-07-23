@@ -5,6 +5,7 @@ public class TopDownCamera : MonoBehaviour {
 
     public delegate void OrbitControl(float degrees);
     public static event OrbitControl UpdateYOrbitValue;
+    public static event OrbitControl UpdateXOrbitValue;
 
     public Transform target;
 
@@ -37,8 +38,8 @@ public class TopDownCamera : MonoBehaviour {
         //bool for allowing orbit
         public float xRotation = -65;
         public float yRotation = -180;
-        public float maxYRotation = 200;
-        public float minYRotation = -200;
+        public float maxXRotation = 60;
+        public float minXRotation = 30;
         public bool allowOrbit = true;
         public float yOrbitSmooth = 0.5f;
     }
@@ -172,15 +173,35 @@ public class TopDownCamera : MonoBehaviour {
         if (mouseOrbitInput > 0)
         {
             orbit.yRotation += (currentMousePosition.x - previousMousePosition.x) * orbit.yOrbitSmooth;
+        }
 
-            if (orbit.yRotation > orbit.maxYRotation)
-                orbit.yRotation = orbit.maxYRotation;
-            if (orbit.yRotation < orbit.minYRotation)
-                orbit.yRotation = orbit.minYRotation;
+        if (mouseOrbitInput > 0)
+        {
+            orbit.xRotation += (currentMousePosition.y - previousMousePosition.y) * orbit.yOrbitSmooth;
+        }
 
-            UpdateYOrbitValue(orbit.yRotation);
+        CheckVerticalRotation();
+        try
+        {
+            UpdateYOrbitValue(orbit.yRotation); //triggered event goes to rotation dial and transform buttons
+            //UpdateXOrbitValue(orbit.xRotation); //triggered event goes to transform buttons
+        }catch(System.NullReferenceException)
+        {}
+    }
+
+    void CheckVerticalRotation()
+    {
+        if (orbit.xRotation > orbit.maxXRotation)
+        {
+            orbit.xRotation = orbit.maxXRotation;
+        }
+        if (orbit.xRotation < orbit.minXRotation)
+        {
+            orbit.xRotation = orbit.minXRotation;
         }
     }
+    
+
 
     void ZoomInOnTarget()
     {

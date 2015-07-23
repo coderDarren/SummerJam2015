@@ -85,7 +85,6 @@ public class BlockTransformer : MonoBehaviour {
         {
             collisionCount++;
             colliding = true;
-            
         }
     }
 
@@ -99,7 +98,6 @@ public class BlockTransformer : MonoBehaviour {
             if (collisionCount == 0)
             {
                 colliding = false;
-                
             }
         }
     }

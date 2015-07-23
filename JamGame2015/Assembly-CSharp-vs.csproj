@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
      <Compile Include="Assets\Scripts\UI\RotationDial.cs" />
      <Compile Include="Assets\Scripts\UI\TipManager.cs" />
+     <Compile Include="Assets\Scripts\UI\TransformButtonRotationHandler.cs" />
      <Compile Include="Assets\Scripts\UI\Wedge.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
