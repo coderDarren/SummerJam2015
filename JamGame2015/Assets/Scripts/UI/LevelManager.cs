@@ -8,13 +8,17 @@ public class LevelManager : MonoBehaviour {
     public static event TimerHandler StartTimeAt;
     public static event TimeHandler StopTime;
 
+    public delegate void PopUpHandler(bool paused);
+    public static event PopUpHandler PausePlayer;
+
     public static LevelManager Instance;
 
     public GameObject LevelCompleteMenu;
     GameObject completeMenu;
     string finalTime;
-
     string level_name;
+
+    bool paused = false;
 
     void Start()
     {
@@ -52,6 +56,7 @@ public class LevelManager : MonoBehaviour {
         completeMenu = Instantiate(LevelCompleteMenu as GameObject);
         completeMenu.transform.parent = transform;
         completeMenu.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        PausePlayer(true);
         StopTime();
     }
 
@@ -59,6 +64,7 @@ public class LevelManager : MonoBehaviour {
     {
         if (completeMenu)
             Destroy(completeMenu);
+        PausePlayer(false);
         StartTimeAt(0, 0);
         Application.LoadLevel(level_name);
     }

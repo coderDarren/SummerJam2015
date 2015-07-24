@@ -33,7 +33,7 @@ public class HelpWindowManager : MonoBehaviour {
                             Destroy(activeWindow);
                         GameObject w = Instantiate(windows[i], new Vector3(Screen.width / 2, Screen.height / 2, 0) + Vector3.left * (Screen.width / 4), Quaternion.identity) as GameObject;
                         w.transform.parent = transform;
-                        w.GetComponent<RectTransform>().localScale = Vector3.one;
+                        w.GetComponent<RectTransform>().localScale = Vector3.one * 1.1f;
                         activeWindow = w;
                     }
                 }

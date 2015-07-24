@@ -50,10 +50,10 @@ public class CharacterController : MonoBehaviour {
     float _downAccel = 0;
     float reducedSpeed = 1;
 
-    public Quaternion TargetRotation
-    {
-        get { return targetRotation; }
-    }
+    bool paused = false;
+
+    public Quaternion TargetRotation { get { return targetRotation; } }
+    public bool Paused { get { return paused; } }
 
     //public to be used by animator controller
     public bool Grounded()
@@ -93,9 +93,20 @@ public class CharacterController : MonoBehaviour {
         walkInput = Input.GetAxisRaw(inputSetting.WALK_AXIS);
     }
 
+    void ZeroAllInput()
+    {
+        forwardInput = 0;
+        turnInput = 0;
+        jumpInput = 0;
+        walkInput = 0;
+    }
+
     void Update()
     {
-        GetInput();
+        if (!paused)
+            GetInput();
+        else
+            ZeroAllInput();
     }
 
     void FixedUpdate()
@@ -103,11 +114,16 @@ public class CharacterController : MonoBehaviour {
         previousMousePos = currentMousePos;
         currentMousePos = Input.mousePosition;
 
-        Run();
-        Turn();
-        Jump();
+        if (!paused)
+        {
+            Run();
+            Turn();
+            Jump();
 
-        rBody.velocity = transform.TransformDirection(velocity);
+            rBody.velocity = transform.TransformDirection(velocity);
+        }
+        else
+            rBody.velocity = Vector3.zero;
     }
 
 
@@ -158,18 +174,22 @@ public class CharacterController : MonoBehaviour {
     void OnEnable()
     {
         SlowDown.AlterSpeed += AlterSpeed;
+        LevelManager.PausePlayer += PausePlayer;
+        HelpWindow.PausePlayer += PausePlayer;
     }
 
     void OnDisable()
     {
         SlowDown.AlterSpeed -= AlterSpeed;
+        LevelManager.PausePlayer -= PausePlayer;
+        HelpWindow.PausePlayer -= PausePlayer;
     }
 
 
     void AlterSpeed(float speedFactor)
     {
-        /*_forwardVel = moveSetting.forwardVel * speedFactor;
-        if (speedFactor < 1)
+       /* _forwardVel = moveSetting.forwardVel * speedFactor;
+        if (speedFactor < 0.2f)
         {
             _rotateVel = moveSetting.rotateVel * (speedFactor * 1.5f);
             _jumpVel = moveSetting.jumpVel * (speedFactor * 3.2f);
@@ -182,5 +202,10 @@ public class CharacterController : MonoBehaviour {
         _downAccel = physSetting.downAccel * speedFactor;
 
         reducedSpeed = speedFactor;*/
+    }
+
+    void PausePlayer(bool paused)
+    {
+        this.paused = paused;
     }
 }

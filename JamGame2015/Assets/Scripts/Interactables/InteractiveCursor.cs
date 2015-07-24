@@ -37,6 +37,7 @@ public class InteractiveCursor : MonoBehaviour
     float teleportCD = 2; //teleport cooldown
     float teleportTimer = 0;
 
+
     void Start()
     {
         cursorTex = baseCursorTex;

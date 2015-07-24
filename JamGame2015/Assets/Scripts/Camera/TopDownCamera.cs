@@ -56,6 +56,7 @@ public class TopDownCamera : MonoBehaviour {
     public InputSettings input = new InputSettings();
 
     CollisionHandler collision;
+    CharacterController character;
     Vector3 targetPos = Vector3.zero;
     Vector3 destination = Vector3.zero;
     Vector3 adjustedDestination = Vector3.zero; 
@@ -84,10 +85,17 @@ public class TopDownCamera : MonoBehaviour {
     {
         //if we want to set a new target at runtime
         target = t;
-
+        
         if (target == null)
         {
             Debug.LogError("Your camera needs a target");
+        }
+        else
+        {
+            if (target.GetComponent<CharacterController>())
+                character = target.GetComponent<CharacterController>();
+            else
+                Debug.LogError("Your camera's target needs a CharacterController");
         }
     }
 
@@ -103,7 +111,7 @@ public class TopDownCamera : MonoBehaviour {
         //getting input 
         //zooming
         GetInput();
-        if (position.allowZoom)
+        if (position.allowZoom && !character.Paused)
         {
             ZoomInOnTarget();
         }
@@ -118,7 +126,9 @@ public class TopDownCamera : MonoBehaviour {
         {
             MoveToTarget();
             LookAtTarget();
-            MouseOrbitTarget();
+
+            if (!character.Paused)
+                MouseOrbitTarget();
 
             collision.UpdateCollisionHandler(destination, targetPos);
             position.adjustmentDistance = collision.GetAdjustedDistanceWithRayFrom(targetPos);
