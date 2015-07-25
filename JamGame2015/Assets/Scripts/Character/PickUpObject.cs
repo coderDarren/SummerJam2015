@@ -5,11 +5,14 @@ using System.Collections;
 
 public class PickUpObject : MonoBehaviour {
 
+    public bool childOfPickup = false;
+
     bool holding = false;
     GameObject pickUpObject;
 
     //animation variables
     public bool Holding() { return holding; }
+
 
 
     void Update()
@@ -28,17 +31,20 @@ public class PickUpObject : MonoBehaviour {
 
     void PickObjectUp()
     {
-        pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 2 + Vector3.forward * 8), 15 * Time.deltaTime);
+        if (!childOfPickup)
+            pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 2 + Vector3.forward * 6), 100 * Time.deltaTime);
     }
 
     void OnEnable()
     {
         MagnetAction.PickUpMagnet += HoldObject;
+        Magnet.DropObject += DropObject;
     }
 
     void OnDisable()
     {
         MagnetAction.PickUpMagnet -= HoldObject;
+        Magnet.DropObject -= DropObject;
     }
 
     void HoldObject(GameObject obj)
@@ -55,6 +61,12 @@ public class PickUpObject : MonoBehaviour {
         pickUpObject.transform.parent = null;
         pickUpObject = null;
         holding = false;
+
+        //in the case of holding a magnet
+        transform.parent = null; //if the player drops a magnet they are child to
+        childOfPickup = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<CharacterController>().underMagnetControl = false;
     }
 
 }

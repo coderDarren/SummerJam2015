@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class Magnet : MonoBehaviour {
 
+    public delegate void PlayerPickUpHandler(GameObject obj);
+    public static event PlayerPickUpHandler DropObject;
+
     public enum Charge {None, Positive, Negative };
     public Charge charge;
     public Color posChargeColor, negChargeColor, noChargeColor;
@@ -22,8 +25,9 @@ public class Magnet : MonoBehaviour {
     Material lightMat;
     Light magnetLight;
     float delayTimer = 0;
-
     float slowTimeFactor = 1;
+
+    Transform player;
 
     void Start()
     {
@@ -31,6 +35,7 @@ public class Magnet : MonoBehaviour {
         coll = GetComponent<Collider>();
         lightMat = GetComponent<Renderer>().materials[1];
         magnetLight = GetComponentInChildren<Light>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -38,8 +43,9 @@ public class Magnet : MonoBehaviour {
         if (charge != Charge.None)
         {
             GetMagnets();
+            CheckForPlayerHoldingMagnet();
             AddForceToMagnets();
-            Debug.DrawRay(transform.position, totalForce, Color.cyan);
+            //Debug.DrawRay(transform.position, totalForce, Color.cyan);
         }
 
         switch (charge)
@@ -64,6 +70,26 @@ public class Magnet : MonoBehaviour {
         if (charge != Charge.None)
         {
             rBody.AddForce(totalForce * slowTimeFactor, ForceMode.Acceleration);
+        }
+    }
+
+    void CheckForPlayerHoldingMagnet()
+    {
+        foreach(Collider magnet in proximityMagnets)
+        {
+            if (magnet.transform.parent == player && magnet.GetComponent<Magnet>().charge != Charge.None)
+            {
+                //swap parents - this way, if there is a magnetic pull on the magnet, the player will follow
+                magnet.transform.parent = null;
+                player.parent = magnet.transform;
+                player.GetComponent<PickUpObject>().childOfPickup = true;
+                player.GetComponent<Rigidbody>().isKinematic = true;
+                player.GetComponent<CharacterController>().underMagnetControl = true;
+            }
+            if (player.parent == magnet.transform && magnet.GetComponent<Magnet>().charge == Charge.None)
+            {
+                DropObject(magnet.gameObject); //PickUpObject.cs is listening
+            }
         }
     }
 

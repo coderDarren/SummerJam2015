@@ -36,6 +36,8 @@ public class CharacterController : MonoBehaviour {
     public PhysSettings physSetting = new PhysSettings();
     public InputSettings inputSetting = new InputSettings();
 
+    public bool underMagnetControl = false;
+
     Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
     Rigidbody rBody;
@@ -107,12 +109,20 @@ public class CharacterController : MonoBehaviour {
             GetInput();
         else
             ZeroAllInput();
+
+        if (underMagnetControl)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, (transform.up * 2), 10 * Time.deltaTime);
+        }
     }
 
     void FixedUpdate()
     {
         previousMousePos = currentMousePos;
         currentMousePos = Input.mousePosition;
+
+        if (underMagnetControl)
+            return;
 
         if (!paused)
         {
@@ -124,6 +134,7 @@ public class CharacterController : MonoBehaviour {
         }
         else
             rBody.velocity = Vector3.zero;
+
     }
 
 
