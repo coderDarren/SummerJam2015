@@ -6,7 +6,7 @@ using System.Collections;
 public class BlockTransformer : MonoBehaviour {
 
     [HideInInspector]
-    public enum Status { Unblocked, Blocked };
+    public enum Status { None, Unblocked, Blocked };
     public Status status;
 
     bool colliding = false;
@@ -24,6 +24,7 @@ public class BlockTransformer : MonoBehaviour {
         {
             child.ResetMaterialColors();
             child.selected = false;
+            child.GetComponent<BlockTransformer>().status = Status.None;
         }
     }
 

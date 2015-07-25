@@ -56,7 +56,7 @@
      <Compile Include="Assets\Scripts\Character\CharacterAnimatorController.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
      <Compile Include="Assets\Scripts\Character\ObstructionHandler.cs" />
-     <Compile Include="Assets\Scripts\Character\Powers.cs" />
+     <Compile Include="Assets\Scripts\Character\PickUpObject.cs" />
      <Compile Include="Assets\Scripts\Interactables\BlockTransformAction.cs" />
      <Compile Include="Assets\Scripts\Interactables\BlockTransformOptions.cs" />
      <Compile Include="Assets\Scripts\Interactables\BlockTransformer.cs" />
@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Powers\DistortedForce.cs" />
      <Compile Include="Assets\Scripts\Powers\DoFManager.cs" />
      <Compile Include="Assets\Scripts\Powers\SlowDown.cs" />
+     <Compile Include="Assets\Scripts\Props\ColorOvertime.cs" />
      <Compile Include="Assets\Scripts\Props\Rotater.cs" />
      <Compile Include="Assets\Scripts\UI\ActionProgressBar.cs" />
      <Compile Include="Assets\Scripts\UI\CircularAttributeBar.cs" />

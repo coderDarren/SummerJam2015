@@ -47,11 +47,13 @@ public class InteractiveCursor : MonoBehaviour
     void OnEnable()
     {
         InteractableObject.InteractWith += InteractWith;
+        LevelCompleteButtons.RestartLevel += RestartLevel;
     }
 
     void OnDisable()
     {
         InteractableObject.InteractWith -= InteractWith;
+        LevelCompleteButtons.RestartLevel -= RestartLevel;
     }
 
     void OnGUI()
@@ -164,5 +166,16 @@ public class InteractiveCursor : MonoBehaviour
         }
         else
             cursorTex = baseCursorTex;
+    }
+
+    void RestartLevel()
+    {
+        InteractionObject = null;
+        try
+        {
+            CloseMagnetOptions();
+            CloseTransformOptions();
+        }
+        catch (System.NullReferenceException) { }
     }
 }

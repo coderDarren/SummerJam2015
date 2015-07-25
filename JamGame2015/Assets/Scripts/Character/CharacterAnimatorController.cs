@@ -2,21 +2,21 @@
 using System.Collections;
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(Powers))]
+[RequireComponent(typeof(PickUpObject))]
 
 public class CharacterAnimatorController : MonoBehaviour {
 
     public Transform upperBody;
 
     CharacterController character;
-    Powers powers;
+    PickUpObject pickup;
     Animator anim;
    
 
     void Start()
     {
         character = GetComponent<CharacterController>();
-        powers = GetComponent<Powers>();
+        pickup = GetComponent<PickUpObject>();
         anim = GetComponent<Animator>();
         
     }
@@ -26,11 +26,11 @@ public class CharacterAnimatorController : MonoBehaviour {
         anim.SetFloat("Run", character.GetRunInput());
         anim.SetFloat("Walk", character.GetWalkInput());
         anim.SetBool("Grounded", character.Grounded());
-        anim.SetBool("Pushing", powers.Pushing());
-        anim.SetBool("Holding", powers.Holding());
+        //anim.SetBool("Pushing", pickup.Pushing());
+        anim.SetBool("Holding", pickup.Holding());
         anim.SetFloat("ReducedSpeed", character.ReducedSpeed);
 
-        if (powers.Holding() && (character.GetRunInput() > 0 || character.GetWalkInput() > 0))
+        if (pickup.Holding() && (character.GetRunInput() > 0 || character.GetWalkInput() > 0))
         {
         }
     }

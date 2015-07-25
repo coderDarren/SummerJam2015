@@ -13,6 +13,7 @@ public class InteractableObject : MonoBehaviour {
     Material[] materials;
     Color[] initialColors;
     Transform player;
+    bool mouseOver = false;
 
     void Start()
     {
@@ -47,20 +48,38 @@ public class InteractableObject : MonoBehaviour {
         }
     }
 
+    void Update()
+    {
+        if (mouseOver)
+        {
+            //Why not put this block of code in OnMouseEnter? 
+            //OnMouseEnter is called once if the mouse enters this object - so it only checks to interact once
+            //If we enter the game object while not in range - it will not continue checking for interaction
+            //This may cause the object to seem non-interactable at times.
+            if (GetPlayerDistance() < interactableDistance)
+            {
+                InteractWith(true, gameObject);
+                SetMaterialColors(interactColor);
+            }
+        }
+    }
+
     void OnMouseEnter()
     {
-        if (GetPlayerDistance() < interactableDistance)
-        {
-            InteractWith(true, gameObject);
-            SetMaterialColors(interactColor);
-        }
+        mouseOver = true;
     }
 
     void OnMouseExit()
     {
+        mouseOver = false;
         InteractWith(false, gameObject);
         if (!selected) //if we didn't just click this object
             ResetMaterialColors(); //then we can reset its color
+        else
+        {
+            if (GetComponent<BlockTransformer>())
+                SetMaterialColors(LevelManager.Instance.GetComponent<BlockTransformOptions>().transformationUnblockedColor);
+        }
     }
 
 

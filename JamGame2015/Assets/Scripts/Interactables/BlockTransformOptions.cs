@@ -5,6 +5,7 @@ public class BlockTransformOptions : MonoBehaviour
 {
     public GameObject OptionsMenu;
     public Color transformationBlockedColor = Color.red;
+    public Color transformationUnblockedColor = Color.blue;
 
     BlockTransformer block;
     GameObject transformBlock;
@@ -49,7 +50,8 @@ public class BlockTransformOptions : MonoBehaviour
                 transforming = false;
             }
 
-            CheckCollisions();
+            if (block != null)
+                CheckCollisions();
         }
     }
 
@@ -98,7 +100,7 @@ public class BlockTransformOptions : MonoBehaviour
         {
             if (block.status != BlockTransformer.Status.Unblocked) //if we are just now switching to unblocked 
             {
-                block.SetChildrenColors();//we need to change the color of the blocks
+                block.SetChildrenColors(transformationUnblockedColor);//we need to change the color of the blocks
             }
 
             block.status = BlockTransformer.Status.Unblocked;
