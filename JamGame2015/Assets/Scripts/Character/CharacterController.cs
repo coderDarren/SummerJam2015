@@ -11,9 +11,8 @@ public class CharacterController : MonoBehaviour {
         public float mouseRotateVel = 0.1f;
         public float jumpVel = 5;
         public float distToGrounded = 0.1f;
-        public float groundCheckRadius = 0.25f;
+        public Transform[] groundCheckPoints;
         public LayerMask ground;
-        public LayerMask alternateGround;
     }
 
     [System.Serializable]
@@ -54,15 +53,29 @@ public class CharacterController : MonoBehaviour {
 
     bool paused = false;
 
+    [HideInInspector]
+    public GameObject magnetInControl;
+    [HideInInspector]
+    public Vector3 magnetOffset;
+
     public Quaternion TargetRotation { get { return targetRotation; } }
     public bool Paused { get { return paused; } }
 
     //public to be used by animator controller
     public bool Grounded()
     {
-        groundCheckRay = new Ray(transform.position, Vector3.down);
-        return Physics.SphereCast(groundCheckRay, moveSetting.groundCheckRadius, moveSetting.distToGrounded, moveSetting.ground);
-        
+        foreach (Transform t in moveSetting.groundCheckPoints)
+        {
+            Debug.DrawLine(t.position, t.position + Vector3.down * moveSetting.distToGrounded, Color.green);
+        }
+
+        foreach (Transform t in moveSetting.groundCheckPoints)
+        {
+            Debug.DrawLine(t.position, t.position + Vector3.down * moveSetting.distToGrounded, Color.green);
+            if (Physics.Raycast(t.position, Vector3.down, moveSetting.distToGrounded, moveSetting.ground))
+                return true;
+        }
+        return false;
     }
     public float ReducedSpeed { get { return reducedSpeed; } }
 
@@ -112,7 +125,8 @@ public class CharacterController : MonoBehaviour {
 
         if (underMagnetControl)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, (transform.up * 2), 10 * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(magnetOffset.x, magnetOffset.z, magnetOffset.y), 10 * Time.deltaTime);
+            Debug.DrawLine(magnetInControl.transform.position, magnetInControl.transform.position + new Vector3(magnetOffset.x, magnetOffset.z, magnetOffset.y), Color.red);
         }
     }
 

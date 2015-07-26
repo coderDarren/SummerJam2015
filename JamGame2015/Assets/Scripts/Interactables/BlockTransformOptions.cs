@@ -52,6 +52,7 @@ public class BlockTransformOptions : MonoBehaviour
 
             if (block != null)
                 CheckCollisions();
+            Debug.Log(transforming);
         }
     }
 
@@ -64,15 +65,16 @@ public class BlockTransformOptions : MonoBehaviour
     {
         if (allowed && !transforming)
         {
-            CancelTransformation();
             initialRotation = transformBlock.transform.rotation;
             targetRotation = initialRotation;
             currentRotation = initialRotation;
-            //play some noise perhaps (auditory que)
+            CancelTransformation();
+            //play some noise perhaps (auditory cue)
         }
         else
         {
-            //play some noise perhaps (auditory que)
+            //play some noise perhaps (auditory cue)
+            
         }
     }
 
@@ -116,11 +118,14 @@ public class BlockTransformOptions : MonoBehaviour
 
     void OpenTransformOptions(GameObject blockObject)
     {
-        if (menu)
-            Destroy(menu);
-        menu = Instantiate(OptionsMenu, new Vector3(Screen.width / 2, Screen.height / 2, 0) + Vector3.right * (Screen.width / 6), Quaternion.identity) as GameObject;
-        menu.transform.parent = transform;
-        Initialize();
+        if (!transforming)
+        {
+            if (menu)
+                Destroy(menu);
+            menu = Instantiate(OptionsMenu, new Vector3(Screen.width / 2, Screen.height / 2, 0) + Vector3.right * (Screen.width / 6), Quaternion.identity) as GameObject;
+            menu.transform.parent = transform;
+            Initialize();
+        }
     }
 
     void CancelTransformation()

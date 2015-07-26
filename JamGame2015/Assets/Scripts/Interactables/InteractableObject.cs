@@ -52,6 +52,7 @@ public class InteractableObject : MonoBehaviour {
     {
         if (mouseOver)
         {
+            
             //Why not put this block of code in OnMouseEnter? 
             //OnMouseEnter is called once if the mouse enters this object - so it only checks to interact once
             //If we enter the game object while not in range - it will not continue checking for interaction
@@ -60,6 +61,7 @@ public class InteractableObject : MonoBehaviour {
             {
                 InteractWith(true, gameObject);
                 SetMaterialColors(interactColor);
+                
             }
         }
     }

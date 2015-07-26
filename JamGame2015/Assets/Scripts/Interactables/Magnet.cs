@@ -45,7 +45,6 @@ public class Magnet : MonoBehaviour {
             GetMagnets();
             CheckForPlayerHoldingMagnet();
             AddForceToMagnets();
-            //Debug.DrawRay(transform.position, totalForce, Color.cyan);
         }
 
         switch (charge)
@@ -85,6 +84,8 @@ public class Magnet : MonoBehaviour {
                 player.GetComponent<PickUpObject>().childOfPickup = true;
                 player.GetComponent<Rigidbody>().isKinematic = true;
                 player.GetComponent<CharacterController>().underMagnetControl = true;
+                player.GetComponent<CharacterController>().magnetInControl = magnet.gameObject;
+                player.GetComponent<CharacterController>().magnetOffset = -Vector3.Normalize(Vector3.zero - player.localPosition) * 2;
             }
             if (player.parent == magnet.transform && magnet.GetComponent<Magnet>().charge == Charge.None)
             {
