@@ -85,7 +85,9 @@ public class Magnet : MonoBehaviour {
                 player.GetComponent<Rigidbody>().isKinematic = true;
                 player.GetComponent<CharacterController>().underMagnetControl = true;
                 player.GetComponent<CharacterController>().magnetInControl = magnet.gameObject;
-                player.GetComponent<CharacterController>().magnetOffset = -Vector3.Normalize(Vector3.zero - player.localPosition) * 2;
+                player.GetComponent<CharacterController>().magnetOffset = Vector3.Normalize(new Vector3(player.localPosition.x, player.localPosition.z, player.localPosition.y)) * 2;
+                Quaternion targetRotation = Quaternion.LookRotation(magnet.transform.position - player.position, Vector3.up);
+                player.eulerAngles = new Vector3(player.eulerAngles.x, targetRotation.eulerAngles.y, player.eulerAngles.z);
             }
             if (player.parent == magnet.transform && magnet.GetComponent<Magnet>().charge == Charge.None)
             {
