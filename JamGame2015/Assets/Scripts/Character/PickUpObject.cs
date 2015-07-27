@@ -34,7 +34,6 @@ public class PickUpObject : MonoBehaviour {
         if (!childOfPickup)
         {
             pickUpObject.transform.localPosition = Vector3.Lerp(pickUpObject.transform.localPosition, (Vector3.up * 5 + Vector3.forward * 6), 100 * Time.deltaTime);
-            Debug.Log("not child of pickup");
         }
     }
 

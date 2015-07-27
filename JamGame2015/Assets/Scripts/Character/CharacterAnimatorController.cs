@@ -6,19 +6,19 @@ using System.Collections;
 
 public class CharacterAnimatorController : MonoBehaviour {
 
-    public Transform upperBody;
-
     CharacterController character;
     PickUpObject pickup;
     Animator anim;
-   
+
+    float airborneTimer = 0;
+    float airborneAllowance = 1;
+    bool falling = false;
 
     void Start()
     {
         character = GetComponent<CharacterController>();
         pickup = GetComponent<PickUpObject>();
         anim = GetComponent<Animator>();
-        
     }
 
     void Update()
@@ -29,9 +29,25 @@ public class CharacterAnimatorController : MonoBehaviour {
         //anim.SetBool("Pushing", pickup.Pushing());
         anim.SetBool("Holding", pickup.Holding());
         anim.SetFloat("ReducedSpeed", character.ReducedSpeed);
+        anim.SetBool("Falling", falling);
 
-        if (pickup.Holding() && (character.GetRunInput() > 0 || character.GetWalkInput() > 0))
+        CheckFalling();
+    }
+
+    void CheckFalling()
+    {
+        if (!character.Grounded())
         {
+            if (airborneTimer < airborneAllowance)
+                airborneTimer += Time.deltaTime;
+
+            if (airborneTimer >= airborneAllowance)
+                falling = true;
+        }
+        else
+        {
+            airborneTimer = 0;
+            falling = false;
         }
     }
 }

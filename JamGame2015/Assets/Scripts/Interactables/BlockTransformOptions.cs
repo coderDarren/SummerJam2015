@@ -52,7 +52,6 @@ public class BlockTransformOptions : MonoBehaviour
 
             if (block != null)
                 CheckCollisions();
-            Debug.Log(transforming);
         }
     }
 
