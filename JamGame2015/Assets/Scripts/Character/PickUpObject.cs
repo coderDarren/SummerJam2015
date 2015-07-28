@@ -54,12 +54,12 @@ public class PickUpObject : MonoBehaviour {
         pickUpObject = obj;
         obj.transform.parent = transform;
         holding = true;
-        pickUpObject.GetComponent<Rigidbody>().useGravity = false;
+        //pickUpObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
     void DropObject(GameObject obj)
     {
-        pickUpObject.GetComponent<Rigidbody>().useGravity = true;
+        //pickUpObject.GetComponent<Rigidbody>().useGravity = true;
         pickUpObject.transform.parent = null;
         pickUpObject = null;
         holding = false;

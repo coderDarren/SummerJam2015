@@ -82,7 +82,7 @@ public class Magnet : MonoBehaviour {
                 magnet.transform.parent = null;
                 player.parent = magnet.transform;
                 player.GetComponent<PickUpObject>().childOfPickup = true;
-                player.GetComponent<Rigidbody>().isKinematic = true;
+                //player.GetComponent<Rigidbody>().isKinematic = true;
                 player.GetComponent<CharacterController>().underMagnetControl = true;
                 player.GetComponent<CharacterController>().magnetInControl = magnet.gameObject;
                 player.GetComponent<CharacterController>().magnetOffset = Vector3.Normalize(new Vector3(player.localPosition.x, player.localPosition.z, player.localPosition.y)) * 2;

@@ -125,7 +125,7 @@ public class CharacterController : MonoBehaviour {
 
         if (underMagnetControl)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(magnetOffset.x, magnetOffset.z, magnetOffset.y), 10 * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(magnetOffset.x, magnetOffset.z, magnetOffset.y), 50 * Time.deltaTime);
         }
     }
 
