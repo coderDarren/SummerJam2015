@@ -3,6 +3,9 @@ using System.Collections;
 
 public class MagnetOptions : MonoBehaviour {
 
+    public delegate void MagnetInteractableHandler(bool canInteract);
+    public static event MagnetInteractableHandler SetInteractability;
+
     public GameObject OptionsMenu;
 
     GameObject menu;
@@ -44,12 +47,14 @@ public class MagnetOptions : MonoBehaviour {
         menu = Instantiate(OptionsMenu, new Vector3(Screen.width / 2, Screen.height / 2, 0), Quaternion.identity) as GameObject;
         menu.transform.parent = transform;
         magnet = forMagnet.GetComponent<Magnet>();
+        SetInteractability(false);
     }
 
     void CloseMagnetOptions()
     {
         Destroy(menu);
         InteractiveCursor.InteractionObject = null;
+        SetInteractability(true);
     }
 
     #endregion

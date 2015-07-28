@@ -14,6 +14,7 @@ public class InteractableObject : MonoBehaviour {
     Color[] initialColors;
     Transform player;
     bool mouseOver = false;
+    bool canInteract = true;
 
     void Start()
     {
@@ -48,20 +49,38 @@ public class InteractableObject : MonoBehaviour {
         }
     }
 
+    void OnEnable()
+    {
+        BlockTransformOptions.SetInteractability += SetInteractable;
+        MagnetOptions.SetInteractability += SetInteractable;
+    }
+
+    void OnDisable()
+    {
+        BlockTransformOptions.SetInteractability -= SetInteractable;
+        MagnetOptions.SetInteractability -= SetInteractable;
+    }
+
+    void SetInteractable(bool canInteract)
+    {
+        this.canInteract = canInteract;
+    }
+
     void Update()
     {
         if (mouseOver)
         {
-            
             //Why not put this block of code in OnMouseEnter? 
             //OnMouseEnter is called once if the mouse enters this object - so it only checks to interact once
             //If we enter the game object while not in range - it will not continue checking for interaction
             //This may cause the object to seem non-interactable at times.
             if (GetPlayerDistance() < interactableDistance)
             {
-                InteractWith(true, gameObject);
-                SetMaterialColors(interactColor);
-                
+                if (canInteract)
+                {
+                    InteractWith(true, gameObject);
+                    SetMaterialColors(interactColor);
+                }
             }
         }
     }

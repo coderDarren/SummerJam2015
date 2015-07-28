@@ -3,6 +3,9 @@ using System.Collections;
 
 public class BlockTransformOptions : MonoBehaviour
 {
+    public delegate void TransformInteractableHandler(bool canInteract);
+    public static event TransformInteractableHandler SetInteractability;
+
     public GameObject OptionsMenu;
     public Color transformationBlockedColor = Color.red;
     public Color transformationUnblockedColor = Color.blue;
@@ -32,6 +35,7 @@ public class BlockTransformOptions : MonoBehaviour
         currentRotation = initialRotation;
 
         initialized = true;
+        SetInteractability(false);
     }
 
     void Update()
@@ -117,7 +121,7 @@ public class BlockTransformOptions : MonoBehaviour
 
     void OpenTransformOptions(GameObject blockObject)
     {
-        if (!transforming)
+        if (!transforming && !initialized)
         {
             if (menu)
                 Destroy(menu);
@@ -133,6 +137,7 @@ public class BlockTransformOptions : MonoBehaviour
         InteractiveCursor.InteractionObject.GetComponent<BlockTransformer>().ResetChildrenColors();
         InteractiveCursor.InteractionObject = null;
         initialized = false;
+        SetInteractability(true);
     }
 
     #endregion
