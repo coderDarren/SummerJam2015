@@ -54,12 +54,10 @@ public class PickUpObject : MonoBehaviour {
         pickUpObject = obj;
         obj.transform.parent = transform;
         holding = true;
-        //pickUpObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
     void DropObject(GameObject obj)
     {
-        //pickUpObject.GetComponent<Rigidbody>().useGravity = true;
         pickUpObject.transform.parent = null;
         pickUpObject = null;
         holding = false;
@@ -67,7 +65,6 @@ public class PickUpObject : MonoBehaviour {
         //in the case of holding a magnet
         transform.parent = null; //if the player drops a magnet they are child to
         childOfPickup = false;
-        GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<CharacterController>().underMagnetControl = false;
     }
 

@@ -17,7 +17,7 @@ public class Magnet : MonoBehaviour {
     public float maxForceOnThis = 100;
 
     Rigidbody rBody;
-    Collider[] proximityMagnets;
+    public Collider[] proximityMagnets;
     Vector3 totalForce = Vector3.zero;
     Vector3 newForce = Vector3.zero;
     Vector3 prevForce = Vector3.zero;
@@ -50,25 +50,37 @@ public class Magnet : MonoBehaviour {
         switch (charge)
         {
             case Charge.None:
-                lightMat.color = noChargeColor;
+                lightMat.SetColor("_EmissionColor", noChargeColor);
+                lightMat.SetColor("_Color", noChargeColor);
                 magnetLight.color = noChargeColor;
+                gameObject.layer = LayerMask.NameToLayer("Default");
                 break;
             case Charge.Positive:
-                lightMat.color = posChargeColor;
+                lightMat.SetColor("_EmissionColor", posChargeColor);
+                lightMat.SetColor("_Color", posChargeColor);
                 magnetLight.color = posChargeColor;
+                gameObject.layer = LayerMask.NameToLayer("Magnet");
                 break;
             case Charge.Negative:
-                lightMat.color = negChargeColor;
+                lightMat.SetColor("_EmissionColor", negChargeColor);
+                lightMat.SetColor("_Color", negChargeColor);
                 magnetLight.color = negChargeColor;
+                gameObject.layer = LayerMask.NameToLayer("Magnet");
                 break;
         }
+
+        if (proximityMagnets.Length > 1 && charge != Charge.None)
+            rBody.useGravity = false;
+        else
+            rBody.useGravity = true;
     }
 
 	void FixedUpdate()
     {
         if (charge != Charge.None)
         {
-            rBody.AddForce(totalForce * slowTimeFactor, ForceMode.Acceleration);
+            rBody.AddForce(totalForce * slowTimeFactor, ForceMode.Force);
+            Debug.DrawLine(transform.position, transform.position + totalForce, Color.cyan);
         }
     }
 
@@ -76,13 +88,12 @@ public class Magnet : MonoBehaviour {
     {
         foreach(Collider magnet in proximityMagnets)
         {
-            if (magnet.transform.parent == player && magnet.GetComponent<Magnet>().charge != Charge.None)
+            if (magnet.transform.parent == player && magnet.GetComponent<Magnet>().charge != Charge.None && Mathf.Abs(magnet.GetComponent<Magnet>().totalForce.magnitude) > 1) //if proxMagnets length is greater than 1 it means there are magnets other than this applying force
             {
                 //swap parents - this way, if there is a magnetic pull on the magnet, the player will follow
                 magnet.transform.parent = null;
                 player.parent = magnet.transform;
                 player.GetComponent<PickUpObject>().childOfPickup = true;
-                //player.GetComponent<Rigidbody>().isKinematic = true;
                 player.GetComponent<CharacterController>().underMagnetControl = true;
                 player.GetComponent<CharacterController>().magnetInControl = magnet.gameObject;
                 player.GetComponent<CharacterController>().magnetOffset = Vector3.Normalize(new Vector3(player.localPosition.x, player.localPosition.z, player.localPosition.y)) * 2;
