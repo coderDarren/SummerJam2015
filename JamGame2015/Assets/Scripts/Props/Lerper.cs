@@ -76,8 +76,9 @@ public class Lerper : MonoBehaviour {
 			pointB = new Vector3 (transform.position.x, transform.position.y, transform.position.z + moveDist);
 			if (moveDist > 0)
 			{
-				Ray ray = new Ray(transform.position, -transform.forward);
+				Ray ray = new Ray(transform.position, transform.forward);
 				RaycastHit hit;
+				Debug.DrawRay(transform.position, -transform.forward);
 				if (Physics.Raycast(ray, out hit, 100))
 				{
 					if (hit.transform.position.z < pointB.z)
@@ -88,7 +89,7 @@ public class Lerper : MonoBehaviour {
 			}
 			else
 			{
-				Ray ray = new Ray(transform.position, transform.forward);
+				Ray ray = new Ray(transform.position, -transform.forward);
 				RaycastHit hit;
 				if (Physics.Raycast(ray, out hit, 100))
 				{
