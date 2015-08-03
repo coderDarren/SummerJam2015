@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Props\LaserScript.cs" />
      <Compile Include="Assets\Scripts\Props\Lerper.cs" />
      <Compile Include="Assets\Scripts\Props\Rotater.cs" />
+     <Compile Include="Assets\Scripts\Props\SimpleLerper.cs" />
      <Compile Include="Assets\Scripts\UI\ActionProgressBar.cs" />
      <Compile Include="Assets\Scripts\UI\CircularAttributeBar.cs" />
      <Compile Include="Assets\Scripts\UI\EndLevelCheckPoint.cs" />
