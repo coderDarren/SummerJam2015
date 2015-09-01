@@ -133,7 +133,7 @@ public class Magnet : MonoBehaviour {
                 {
                     if (magnet.charge != Charge.None)
                     {
-                        Vector3 dir = magnet.coll.ClosestPointOnBounds(transform.position) - transform.position;
+                        Vector3 dir = magnet.transform.position - transform.position;
                         RaycastHit hit;
                         if (Physics.Raycast(transform.position, dir, out hit, magnetLayer))
                         {
@@ -159,6 +159,7 @@ public class Magnet : MonoBehaviour {
         }
 
     }
+
 
     void OnEnable()
     {
