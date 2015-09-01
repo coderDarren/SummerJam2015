@@ -15,6 +15,7 @@ public class Magnet : MonoBehaviour {
     public float magnetStrength = 1;
     public float magnetRadius = 3;
     public float maxForceOnThis = 100;
+    public bool attractToMagnetCenter = false;
 
     Rigidbody rBody;
     public Collider[] proximityMagnets;
@@ -133,7 +134,12 @@ public class Magnet : MonoBehaviour {
                 {
                     if (magnet.charge != Charge.None)
                     {
-                        Vector3 dir = magnet.transform.position - transform.position;
+                        Vector3 dir;
+                        if (magnet.attractToMagnetCenter)
+                            dir = magnet.transform.position - transform.position;
+                        else
+                            dir = magnet.coll.ClosestPointOnBounds(transform.position) - transform.position;
+                        
                         RaycastHit hit;
                         if (Physics.Raycast(transform.position, dir, out hit, magnetLayer))
                         {
@@ -160,6 +166,40 @@ public class Magnet : MonoBehaviour {
 
     }
 
+    Vector3 ClosestPointOnMesh(Transform magnet)
+    {
+        Vector3 closest = Vector3.zero;
+        Vector3[] vertices;
+        Vector3 point = transform.InverseTransformDirection(transform.position);
+        float minDistance = Mathf.Infinity;
+        Mesh m = magnet.GetComponent<MeshFilter>().mesh;
+
+        if (m)
+            vertices = m.vertices;
+        else
+        {
+            Debug.LogError("The mesh you are checking at is null or does not exist.");
+            return closest;
+        }
+
+        if (vertices.Length > 0)
+            closest = vertices[0];
+
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            Vector3 distance = point-vertices[i];
+            float distSqrd = distance.sqrMagnitude;
+            
+            if (distSqrd < minDistance)
+            {
+                minDistance = distSqrd;
+                closest = vertices[i];
+            }
+        }
+        
+        Debug.Log("Closest point: " + magnet.TransformPoint(closest));
+        return magnet.TransformPoint(closest);
+    }
 
     void OnEnable()
     {
