@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Props\Lerper.cs">
     <Files>
@@ -11,6 +12,20 @@
       <File FileName="Assets\Scripts\Menu\DynamicListener.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\LevelManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\LevelCompleteButtons.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Demo AI/Assets/Scripts/basicAI.cs">
+    <Files>
+      <File FileName="../../Demo AI/Assets/Scripts/basicAI.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/Props/SimpleLerper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Props/LaserScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Props/Rotater.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Powers/SlowDown.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/ButtonBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/DynamicListener.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/LevelCompleteButtons.cs" Line="1" Column="1" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
